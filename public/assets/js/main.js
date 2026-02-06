@@ -37,6 +37,7 @@ function send_feedback() {
     ajax.send("rate="+rateState);
 }
 var i = 0
+
 function btn_change() {
     _('apply').style.display="block";
     if(i >= 1) {
@@ -52,7 +53,7 @@ function coupon(id) {
     _('coupon_error').innerHTML="";
 	if(_(id).value.trim().length >= 8){
         _('apply').style.display="none"
-        _(id).style.background = "url('../images/loader.gif') no-repeat right 9px center transparent";
+        _(id).style.background = "url('../assets/images/loader.gif') no-repeat right 9px center transparent";
         _(id).setAttribute('disabled','disabled');
         var ajax = new XMLHttpRequest();
         ajax.open("POST","normal.php",true);
@@ -103,6 +104,8 @@ jQuery(function($) {'use strict';
 
 	//Initiat WOW JS
 	new WOW().init();
+
+	
 
 	// portfolio filter
 	$(window).load(function(){

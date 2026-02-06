@@ -10,7 +10,11 @@
        <a href="https://twitter.com/ShawodWeb" target="_blank">
        <img src="assets/images/home/profile2.png" alt="Twitter"></a>
       </div>
-      <h3><a href="./portal/index.php">Clients Portal</a></h3>
+      <h3><Link :href="route('portal')">Clients Portal</Link></h3>
     </div>
  </div>
 </template>
+
+<script setup lang="ts">
+ import { route } from 'ziggy-js';
+</script>

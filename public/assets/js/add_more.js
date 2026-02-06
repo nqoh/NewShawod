@@ -175,89 +175,137 @@ if(add=='sab_logo'){l=0;localStorage.removeItem("logo");localStorage.removeItem(
 var feature='';
 var pgs=0;var pag='',fm='',glly='',czs='',logos='',seoz='',sslz='',prt='',dnm='',ct='',em='',hst='',dsg='';
 var  td_pg='',td_form='',td_gallery='',td_cms,td_logo='',td_seo='',td_ssl='',td_protected='',td_domain='',td_chat='',td_email='',td_ehost='',td_design='',td_seos='',th='';
+
 function create_tabe(add,item,num,prc) {
 
     if(add=='add_page'){
         pag =num+" pages ||";
       td_pg ="<tr><td>"+item+"</td><td >"+num+"</td><td> R"+parseFloat(prc).toFixed(2)+"</td>" +
-        "<td>"+localStorage.package+"</td><td><i onclick='remove_item(\"sab_page\",localStorage.price,pgs)' class='fa fa-trash-o' style='font-size: 21px; cursor: pointer; color : #ff4444'></i> </td></tr> ";}else if(add=='sab_page'){td_pg='';pag=''}
+        "<td>"+localStorage.package+"</td><td><i onclick='remove_item(\"sab_page\",localStorage.price,pgs)' class='fa fa-trash-o' style='font-size: 21px; cursor: pointer; color : #ff4444'></i> </td></tr> ";
+    }else if(add=='sab_page'){
+        td_pg='';pag='';
+    }
 
 
     if(add=='add_form'){
             fm=num+" Forms ||";
         td_form ="<tr><td>"+item+"</td><td>"+num+"</td><td> R"+parseFloat(prc).toFixed(2)+"</td>" +
-            "<td>"+localStorage.package+"</td><td><i class='fa fa-trash-o'  onclick='remove_item(\"sab_form\",localStorage.form,f)' style='font-size: 21px; cursor: pointer; color : #ff4444'></i></td></tr> ";}else if(add=='sab_form'){td_form=''; fm=''}
+            "<td>"+localStorage.package+"</td><td><i class='fa fa-trash-o'  onclick='remove_item(\"sab_form\",localStorage.form,f)' style='font-size: 21px; cursor: pointer; color : #ff4444'></i></td></tr> ";
+        }else if(add=='sab_form'){
+            td_form=''; fm=''
+        }
 
     if(add=='add_gallery'){
                 glly=num+ " gallery ||"
         td_gallery="<tr><td>"+item+"</td><td>"+num+" x 5</td><td> R"+parseFloat(prc).toFixed(2)+"</td>" +
-            "<td>"+localStorage.package+"</td><td><i class='fa fa-trash-o' onclick='remove_item(\"sab_gallery\",localStorage.gallery,g)' style='font-size: 21px; cursor: pointer; color : #ff4444'></i></td></tr> ";}else if(add=='sab_gallery'){td_gallery='',glly='';}
+            "<td>"+localStorage.package+"</td><td><i class='fa fa-trash-o' onclick='remove_item(\"sab_gallery\",localStorage.gallery,g)' style='font-size: 21px; cursor: pointer; color : #ff4444'></i></td></tr> ";
+        }else if(add=='sab_gallery'){
+            td_gallery='',glly='';
+        }
 
     if(add=='add_cms'){
                 czs=num + " C M S ||";
         td_cms="<tr><td>"+item+"</td><td>"+num+"</td><td> R"+parseFloat(prc).toFixed(2)+"</td>" +
-            "<td>"+localStorage.package+"</td><td><i class='fa fa-trash-o' onclick='remove_item(\"sab_cms\",localStorage.cms,c)' style='font-size: 21px; cursor: pointer; color : #ff4444'></i></td></tr> ";}else if(add=='sab_cms'){td_cms='',czs=""}
+            "<td>"+localStorage.package+"</td><td><i class='fa fa-trash-o' onclick='remove_item(\"sab_cms\",localStorage.cms,c)' style='font-size: 21px; cursor: pointer; color : #ff4444'></i></td></tr> ";
+        }else if(add=='sab_cms'){
+            td_cms='',czs=""
+        }
 
     if(add=='add_logo'){
                 logos=num+" logos ||"
         td_logo="<tr><td>"+item+"</td><td>"+num+"</td><td> R"+parseFloat(prc).toFixed(2)+"</td>" +
-            "<td>"+localStorage.package+"</td><td><i class='fa fa-trash-o' onclick='remove_item(\"sab_logo\",localStorage.logo,l)' style='font-size: 21px; cursor: pointer; color : #ff4444'></i></td></tr> ";}else if(add=='sab_logo'){td_logo='',logos=''}
+            "<td>"+localStorage.package+"</td><td><i class='fa fa-trash-o' onclick='remove_item(\"sab_logo\",localStorage.logo,l)' style='font-size: 21px; cursor: pointer; color : #ff4444'></i></td></tr> ";
+        }else if(add=='sab_logo'){
+            td_logo='',logos=''
+        }
 
     if(add=='add_seo'){
                 seoz=item+" ||";
         td_seo="<tr><td>"+item+"</td><td>"+num+"</td><td> R"+parseFloat(prc).toFixed(2)+"</td>" +
-            "<td>"+localStorage.package+"</td><td><i class='fa fa-trash-o' onclick='remove_item(\"sab_seo\",localStorage.seo,s)' style='font-size: 21px; cursor: pointer; color : #ff4444'></i></td></tr> ";}else if(add=='sab_seo'){td_seo='',seoz=''}
+            "<td>"+localStorage.package+"</td><td><i class='fa fa-trash-o' onclick='remove_item(\"sab_seo\",localStorage.seo,s)' style='font-size: 21px; cursor: pointer; color : #ff4444'></i></td></tr> ";
+        }else if(add=='sab_seo'){
+            td_seo='',seoz=''
+        }
 
     if(add=='add_ssl'){
                 sslz=" SSL ||"
         td_ssl="<tr><td>"+item+"</td><td>"+num+"</td><td> R"+parseFloat(prc).toFixed(2)+"</td>" +
-            "<td>"+localStorage.package+"</td><td><i class='fa fa-trash-o' onclick='remove_item(\"sab_ssl\",localStorage.ssl,ss)' style='font-size: 21px; cursor: pointer; color : #ff4444'></i></td></tr> ";}else if(add=='sab_ssl'){td_ssl='',sslz=''}
+            "<td>"+localStorage.package+"</td><td><i class='fa fa-trash-o' onclick='remove_item(\"sab_ssl\",localStorage.ssl,ss)' style='font-size: 21px; cursor: pointer; color : #ff4444'></i></td></tr> ";
+        }else if(add=='sab_ssl'){
+            td_ssl='',sslz=''
+        }
     if(add=='add_protected'){
                 prt=" domain protected ||"
         td_protected="<tr><td>"+item+"</td><td>"+num+"</td><td> R"+parseFloat(prc).toFixed(2)+"</td>" +
-            "<td>"+localStorage.package+"</td><td><i class='fa fa-trash-o' onclick='remove_item(\"sab_protected\",localStorage.protected,pr)' style='font-size: 21px; cursor: pointer; color : #ff4444'></i></td></tr> ";}else if(add=='sab_protected'){td_protected='',prt=''}
+            "<td>"+localStorage.package+"</td><td><i class='fa fa-trash-o' onclick='remove_item(\"sab_protected\",localStorage.protected,pr)' style='font-size: 21px; cursor: pointer; color : #ff4444'></i></td></tr> ";
+        }else if(add=='sab_protected'){
+            td_protected='',prt=''
+        }
 
     if(add=='add_domain'){
                 dnm=" domain info locker ||"
         td_domain="<tr><td>"+item+"</td><td>"+num+"</td><td> R"+parseFloat(prc).toFixed(2)+"</td>" +
-            "<td>"+localStorage.package+"</td><td><i class='fa fa-trash-o' onclick='remove_item(\"sab_domain\",localStorage.domain,d)' style='font-size: 21px; cursor: pointer; color : #ff4444'></i></td></tr> ";}else if(add=='sab_domain'){td_domain='',dnm=''}
+            "<td>"+localStorage.package+"</td><td><i class='fa fa-trash-o' onclick='remove_item(\"sab_domain\",localStorage.domain,d)' style='font-size: 21px; cursor: pointer; color : #ff4444'></i></td></tr> ";
+        }else if(add=='sab_domain'){
+            td_domain='',dnm=''
+        }
 
     if(add=='add_chat'){
                 ct=num+" Basic Chat Zone ||";
         td_chat="<tr><td>"+item+"</td><td>"+num+"</td><td> R"+parseFloat(prc).toFixed(2)+"</td>" +
-            "<td>"+localStorage.package+"</td><td><i class='fa fa-trash-o' onclick='remove_item(\"sab_chat\",localStorage.chat,ch)' style='font-size: 21px; cursor: pointer; color : #ff4444'></i></td></tr> ";}else if(add=='sab_chat'){td_chat='',ct=''}
+            "<td>"+localStorage.package+"</td><td><i class='fa fa-trash-o' onclick='remove_item(\"sab_chat\",localStorage.chat,ch)' style='font-size: 21px; cursor: pointer; color : #ff4444'></i></td></tr> ";}
+            else if(add=='sab_chat'){
+                td_chat='',ct=''
+            }
 
     if(add=='add_email'){
                 em=num+" X 5 Emails ||";
         td_email="<tr><td>"+item+"</td><td>"+num+" x 5</td><td> R"+parseFloat(prc).toFixed(2)+"</td>" +
-            "<td>"+localStorage.package+"</td><td><i class='fa fa-trash-o' onclick='remove_item(\"sab_email\",localStorage.email,e)' style='font-size: 21px; cursor: pointer; color : #ff4444'></i></td></tr> ";}else if(add=='sab_email'){td_email='',em=''}
+            "<td>"+localStorage.package+"</td><td><i class='fa fa-trash-o' onclick='remove_item(\"sab_email\",localStorage.email,e)' style='font-size: 21px; cursor: pointer; color : #ff4444'></i></td></tr> ";
+        }else if(add=='sab_email'){
+            td_email='',em=''
+        }
 
     if(add=='add_ehost'){
                 hst=item+" ||";
         td_ehost="<tr><td>"+item+"</td><td>"+num+"</td><td> R"+parseFloat(prc).toFixed(2)+"</td>" +
-            "<td>"+localStorage.package+"</td><td><i class='fa fa-trash-o' onclick='remove_item(\"sab_ehost\",localStorage.ehost,eco)' style='font-size: 21px; cursor: pointer; color : #ff4444'></i></td></tr> ";}else if(add=='sab_ehost'){td_ehost='',hst=''}
+            "<td>"+localStorage.package+"</td><td><i class='fa fa-trash-o' onclick='remove_item(\"sab_ehost\",localStorage.ehost,eco)' style='font-size: 21px; cursor: pointer; color : #ff4444'></i></td></tr> ";
+        }else if(add=='sab_ehost'){
+            td_ehost='',hst=''
+        }
 
     if(add=='add_design'){
                 dsg=item+" ||";
         td_design="<tr><td>"+item+"</td><td>"+num+"</td><td> R"+parseFloat(prc).toFixed(2)+"</td>" +
-            "<td>"+localStorage.package+"</td><td><i class='fa fa-trash-o' onclick='remove_item(\"sab_design\",localStorage.design,designe)' style='font-size: 21px; cursor: pointer; color : #ff4444'></i></td></tr> ";}else if(add=='sab_design'){td_design='',dsg=''}
+            "<td>"+localStorage.package+"</td><td><i class='fa fa-trash-o' onclick='remove_item(\"sab_design\",localStorage.design,designe)' style='font-size: 21px; cursor: pointer; color : #ff4444'></i></td></tr> ";
+        }else if(add=='sab_design'){
+            td_design='',dsg=''
+        }
 
     if(add=='add_seos'){
                 seoz=item+" ||"
         td_seos="<tr align='center'><td>"+item+"</td><td>"+num+"</td><td> R"+parseFloat(prc).toFixed(2)+"</td>" +
-            "<td>"+localStorage.package+"</td><td><i class='fa fa-trash-o' onclick='remove_item(\"sab_seos\",localStorage.seos,myseos)' style='font-size: 21px; cursor: pointer; color : #ff4444'></i></td></tr> ";}else if(add=='sab_seos'){td_seos='',seoz='';}
+            "<td>"+localStorage.package+"</td><td><i class='fa fa-trash-o' onclick='remove_item(\"sab_seos\",localStorage.seos,myseos)' style='font-size: 21px; cursor: pointer; color : #ff4444'></i></td></tr> ";
+        }else if(add=='sab_seos'){
+            td_seos='',seoz='';
+        }
 
 
 
     if(td_pg=='' && td_form=='' && td_gallery=='' && td_cms=='' && td_logo=='' && td_ssl=='' && td_protected=='' && td_domain=='' && td_chat=='' && td_email==''
-    && td_ehost=='' && td_design=='' && td_seos==''){th='';_("classTable").style.display='none'}
-
-    else {_("classTable").style.display='block';th ="<thead><tr align='center'><th>Name</th><th>Quantity</th><th>Price</th><th>Package</th><th>Remove</th></tr></thead>"};
-       if(td_cms==null){td_cms=""}
-      _("table").innerHTML = th ;
+    && td_ehost=='' && td_design=='' && td_seos==''){
+         th='';
+        _("classTable").style.display='none';
+    }else {
+       _("classTable").style.display='block';
+       th ="<thead><tr align='center'><th>Name</th><th>Quantity</th><th>Price</th><th>Package</th><th>Remove</th></tr></thead>";
+    };
+        if(td_cms==null){td_cms="";}
+       
+       _("table").innerHTML = th ;
       _('bodyTable').innerHTML = td_pg + td_form + td_gallery + td_cms + td_logo + td_seos + td_ssl
-          + td_protected + td_domain + td_chat + td_email + td_ehost + td_design ;
-     feature=pag+fm+glly+czs+logos+seoz+sslz+prt+dnm+ct+em+hst+dsg;
+       + td_protected + td_domain + td_chat + td_email + td_ehost + td_design ;
+      feature=pag+fm+glly+czs+logos+seoz+sslz+prt+dnm+ct+em+hst+dsg;
 }
 
 function add_page() {
@@ -266,7 +314,7 @@ function add_page() {
     p +=parseFloat(localStorage.price);
     pgs+=parseInt(localStorage.page_id);
     _('count1').innerHTML=' '+pgs+''
-    _("state").innerHTML=" <b>Page</b> (R125.00 for each additional page)";
+    _("state").innerHTML=" <b>Web Page</b> (R125.00 for each additional page)";
     _("order").innerHTML="R"+parseFloat(p.toFixed(2)).toFixed(2)+" !";
     _("discount").innerHTML="R "+parseFloat(p.toFixed(2)/100*50).toFixed(2)+" (50%) non-refundable deposit of after content approval";
     _("span1").style.visibility="visible";
@@ -274,15 +322,17 @@ function add_page() {
 }
 function sub_page() {
     p  -=parseFloat(localStorage.price);
-    pgs-=parseInt(localStorage.page_id);
+    pgs -=parseInt(localStorage.page_id);
     _('count1').innerHTML=' '+pgs+''
-    _("state").innerHTML=" <b>Page</b> (R125.00 for each additional page)";
+    _("state").innerHTML=" <b>Web Page</b> (R125.00 for each additional page)";
     _("order").innerHTML="R"+parseFloat(p.toFixed(2)).toFixed(2)+" !";
     _("discount").innerHTML="R "+parseFloat(p.toFixed(2)/100*50).toFixed(2)+" (50%) non-refundable deposit of after content approval";
     create_tabe('add_page','Web Page',pgs,localStorage.price);
+   
     if(pgs <= 0) {
-        _("state").innerHTML=" Page (R125.00 for each additional page)";
-        localStorage.removeItem('price');pgs=0;
+        _("state").innerHTML="<b>Web Page</b> (R125.00 for each additional page)";
+        localStorage.removeItem('price');
+        pgs=0;
         localStorage.removeItem('page_id');
         _('count1').innerHTML=''
         _("span1").style.visibility="hidden";
@@ -337,13 +387,13 @@ function sub_gallery() {
     p-=parseFloat(localStorage.gallery);
     g-=parseInt(localStorage.gallery_id);
     _('count3').innerHTML=' '+g+''
-    _("photo").innerHTML=" 5 Photo Gallery (R125.00 for each additional page)";
+    _("photo").innerHTML=" 5 <b>Photo Gallery</b> (R125.00 for each additional page)";
     _("order").innerHTML="R"+parseFloat(p.toFixed(2)).toFixed(2)+" !";
     _("discount").innerHTML="R "+parseFloat(p.toFixed(2)/100*50).toFixed(2)+" (50%) non-refundable deposit of after content approval";
     create_tabe('add_gallery',' Photo Gallery ',g,localStorage.gallery);
     if(g <= 0){
         localStorage.removeItem("gallery");localStorage.removeItem("gallery");g=0;
-        _("photo").innerHTML="Photo Gallery (R125.00 for each additional page)";
+        _("photo").innerHTML="  <b>Photo Gallery</b> (R125.00 for each additional page)";
         _("order").innerHTML="R"+parseFloat(p.toFixed(2)).toFixed(2)+" !";
         _('count3').innerHTML=' '
         create_tabe('sab_gallery',' Photo Gallery ',f,localStorage.form);
@@ -375,7 +425,7 @@ function sub_cms() {
     if(c <= 0){
         localStorage.removeItem("cms");localStorage.removeItem("cms_id");c=0;
         _('count4').innerHTML=' '
-        _("cms").innerHTML="<b>Content Management System</b> (R199.50 for each additional page)";
+        _("cms").innerHTML="  <b>Content Management System</b> (R199.50 for each additional page)";
         _("order").innerHTML="R"+parseFloat(p.toFixed(2)).toFixed(2)+" !";
         _("discount").innerHTML="R "+parseFloat(p.toFixed(2)/100*50).toFixed(2)+" (50%) non-refundable deposit of after content approval";
         create_tabe('sab_cms',' C M S ',c,localStorage.cms);
@@ -409,7 +459,7 @@ function sub_logo() {
     if(l <= 0){
         _("lg").style.visibility="visible";
         localStorage.removeItem("logo");localStorage.removeItem("logo_id");l=0;
-        _("logo").innerHTML="Logo Design (R650.00)";
+        _("logo").innerHTML=" <b>Logo Design</b> (R650.00)";
         _('count5').innerHTML=' '
         _("order").innerHTML="R"+parseFloat(p.toFixed(2)).toFixed(2)+" !";
         _("discount").innerHTML="R "+parseFloat(p.toFixed(2)/100*50).toFixed(2)+" (50%) non-refundable deposit of after content approval";

@@ -3,11 +3,11 @@
       <section id="home-slider">
         <div class="container">
           <div class="row">
-            <div class="main-slider">
+            <div class="main-slider ">
               <div class="slide-text">
                  <h1>Let's make your Online Brand Ambassador!</h1>
                   <p><b>Web Surfers Take 5 Seconds!</b> To form an impression and find value on a website, Turn your traffic into Prospects with Shawod IT Solution.</p>
-                <div class="wraps"> <a class="btn-6" href="websites.php">GET STARTED<span></span></a></div>
+                <div class="wraps"> <Link class="btn-6" :href="route('websites')">GET STARTED<span></span></Link></div>
                </div>
                  <img src="/assets/images/home/slider/hill.png"    class="slider-hill" alt="slider image">
                  <img src="/assets/images/home/slider/mlondie.gif" class="slider-mlondie" alt="slider image">
@@ -72,7 +72,7 @@
                         </div>
                         <div class="col-sm-5 text-center wow fadeInRight" data-wow-duration="500ms" data-wow-delay="300ms">
                             <div class="tour-button">
-                                <div class="wraps"> <a class="btn-6" href="packages.php">VIEW OUR DEALS<span></span></a></div>
+                                <div class="wraps"> <Link class="btn-6" :href="route('packages')">VIEW OUR DEALS<span></span></Link></div>
                              </div>
                         </div>
                     </div>
@@ -109,7 +109,7 @@
                     </div>
                     <div class="col-sm-6 wow fadeInRight" data-wow-duration="500ms" data-wow-delay="300ms">
                         <h2>Search Engine Optimization </h2>
-                        <P>Do you want to appear on the first page on Google? We hope you do, we can optimize your website to achieve top rankings on major search engines by implementing our thorough, common sense methodology. <a href="seo.php">Get started now</a></P>
+                        <P>Do you want to appear on the first page on Google? We hope you do, we can optimize your website to achieve top rankings on major search engines by implementing our thorough, common sense methodology. <Link :href="route('seo')">Get started now</Link></P>
                     </div>
                 </div>
             </div>
@@ -126,23 +126,23 @@
             <div class="col-lg-4 col-md-6 single-service">
                 <div class="inner">
                     <div class="title">
-                        <a href="contact.php"><div class="icon">
+                        <Link :href="route('contactus')"><div class="icon">
                             <i class="fa fa-phone"></i>
                         </div>
-                        <h4> Contact us</h4></a>
+                        <h4> Contact us</h4></Link>
                     </div>
                     <div class="content">
-                        <p>We're always interested in hearing from people. follow the <a href="contact.php">link</a>, let's chat.</p>
+                        <p>We're always interested in hearing from people. follow the <Link :href="route('contactus')">link</Link>, let's chat.</p>
                     </div>
                 </div>
             </div>
             <div class="col-lg-4 col-md-6 single-service">
                 <div class="inner">
                     <div class="title">
-                        <a href="howitworks.php"><div class="icon">
+                        <Link :href="route('howitworks')"><div class="icon">
                             <i class="fa fa-life-ring"></i>
                         </div>
-                        <h4> How it works</h4></a>
+                        <h4> How it works</h4></Link>
                     </div>
                     <div class="content">
                         <p>Know the steps we take when embarking on your project, from approving to launching it.</p>
@@ -152,10 +152,10 @@
             <div class="col-lg-4 col-md-6 single-service">
                 <div class="inner">
                     <div class="title">
-                       <a href="createawebsite.php"> <div class="icon">
+                       <Link :href="route('createawebsite')"> <div class="icon">
                             <i class="fa fa-info-circle"></i>
                         </div>
-                        <h4>How to create a website</h4></a>
+                        <h4>How to create a website</h4></Link>
                     </div>
                     <div class="content">
                         <p>Follow these simple Shawod tutorials on how to get the best website or package.</p>
@@ -165,10 +165,10 @@
             <div class="col-lg-4 col-md-6 single-service">
                 <div class="inner">
                     <div class="title">
-                      <a href="portal.php">  <div class="icon">
+                      <Link :href="route('portal')">  <div class="icon">
                             <i class="fa fa-laptop"></i>
                         </div>
-                        <h4>Client portal</h4></a>
+                        <h4>Client portal</h4></Link>
                     </div>
                     <div class="content">
                         <p>We have designed a portal for clients to view their project real-time, this is the first of its kind in the Industry.</p>
@@ -178,10 +178,10 @@
             <div class="col-lg-4 col-md-6 single-service">
                 <div class="inner">
                     <div class="title">
-                        <a href="blog.php"><div class="icon">
+                        <Link :href="route('blog')"><div class="icon">
                             <i class="fa fa-magic"></i>
                         </div>
-                        <h4>Blog</h4></a>
+                        <h4>Blog</h4></Link>
                     </div>
                     <div class="content">
                         <p>Shawod offers a blog which features tech and business related articles. They say you learn something new everyday. </p>
@@ -191,10 +191,10 @@
             <div class="col-lg-4 col-md-6 single-service">
                 <div class="inner">
                     <div class="title">
-                      <a href="faq.php"> <div class="icon">
+                      <Link :href="route('faq')"> <div class="icon">
                             <i class="fa fa-bar-chart"></i>
                         </div>
-                        <h4>Frequently Asked Questions</h4></a>
+                        <h4>Frequently Asked Questions</h4></Link>
                     </div>
                     <div class="content">
                         <p>We have combined frequently asked questions to help with questions you might have.</p>
@@ -250,7 +250,11 @@
 </template>
 
 <script setup lang="ts">
-
+import { onMounted } from 'vue';
+import { route } from 'ziggy-js'
+import { homeSlider }  from '@/composables/HomeSlider';
+import { Link } from '@inertiajs/vue3';
+onMounted(()=> homeSlider())
 </script>
 
 <style scoped>

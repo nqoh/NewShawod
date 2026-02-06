@@ -31,7 +31,7 @@
 <script setup lang="ts">
 import BreaCrumb from '@/components/app/BreadCrumb.vue';
 import OurDeal from '@/components/app/OurDeal.vue';
-import Packagesdescription from '@/components/app/Packagesdescription.vue';
+import Packagesdescription from '@/components/app/PackagesDescription.vue';
 import Title from '@/components/app/Title.vue';
 import BigLeague from '@/components/packages/bigLeague.vue';
 import packages from '@/components/packages/packages.vue';

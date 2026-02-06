@@ -15,7 +15,7 @@
 <div class='pricing pricing-palden'>
   <div class='pricing-item' style='margin: 1em 0.6em;'>
       <div class='pricing-deco'>
-        <WebBronzeIcon />
+        <IconWeave />
         <div class='pricing-price'><span class='pricing-currency'>R</span>14 250.00</div>
         <h3 class='pricing-title'>Platinum</h3>
       </div>
@@ -24,16 +24,16 @@
         <li class='pricing-feature'>2*5 Photo Gallery</li>
         <li class='pricing-feature'>Premium Design</li>
       </ul>
-        <span class="btn pricing-action" onclick="getpack('Platinum Web','10 Pages','1 Contact Form','Premium Design','14250.00',
+        <span class="btn pricing-action" @click="getwebsite('Platinum Web','10 Pages','1 Contact Form','Premium Design','14250.00',
             'assets/images/home/prem.png','Social Media Integration','2*5 Photo Gallery','','','',
             'These Packages are designed for high-end websites, owning a Premium packages means you never have to ' +
-             'worry about traffic crashing your website, Security and Reliability are Covered with 99% Up-time Guarantee','','website')">
+             'worry about traffic crashing your website, Security and Reliability are Covered with 99% Up-time Guarantee','website')">
             <CENTER>Configure</CENTER></span>
     </div>
 
 <div class='pricing-item pricing-palden'>
   <div class='pricing-deco'>
-        <SilverIcon />
+        <IconWeave />
    <div class='pricing-price'><span class='pricing-currency'>R</span>19 499.99</div>
         <h3 class='pricing-title'>Diamond</h3>
     </div> 
@@ -42,15 +42,15 @@
       <li class='pricing-feature'>Premium S.E.O</li>
       <li class='pricing-feature'>Social Media Integration </li>
     </ul>
-     <span class="btn pricing-action" onclick="getpack('Diamond Web','15 Pages','Premium Design','3*5 Photo Gallery','19499.99',
+     <span class="btn pricing-action" @click="getwebsite('Diamond Web','15 Pages','Premium Design','3*5 Photo Gallery','19499.99',
             'assets/images/home/prof.png','1 Contact Form','Social Media Integration','Premium S.E.O','','',
             'These Packages are designed for high-end websites, owning a professional packages means you never have to ' +
-             'worry about traffic crashing your website, Security and Reliability are Covered with 99% Up-time Guarantee','','website')">
+             'worry about traffic crashing your website, Security and Reliability are Covered with 99% Up-time Guarantee','website')">
             <CENTER>Configure</CENTER></span>
     </div>
 <div class='pricing-item' style='margin: 1em 0.6em;'>
   <div class='pricing-deco'>
-       <GoldIcon />
+       <IconWeave />
    <div class='pricing-price'><span class='pricing-currency'>R</span>22 500.00</div>
         <h3 class='pricing-title'>Titanium</h3>
    </div>
@@ -59,10 +59,10 @@
       <li class='pricing-feature'>4*5 Photo Gallery</li>
       <li class='pricing-feature'>1 Contact Form</li>
     </ul>
-  <span class="btn pricing-action" onclick="getpack(' Titanium Web','20 Pages','Custom Design','4*5 Photo Gallery','22500.00',
+  <span class="btn pricing-action" @click="getwebsite('Titanium Web','20 Pages','Custom Design','4*5 Photo Gallery','22500.00',
             'assets/images/home/prof.png','1 Contact Form','Social Media Integration','Premium S.E.O','','',
             'These Packages are designed for high-end websites, owning a professional packages means you never have to ' +
-             'worry about traffic crashing your website, Security and Reliability are Covered with 99% Up-time Guarantee','','website')">
+             'worry about traffic crashing your website, Security and Reliability are Covered with 99% Up-time Guarantee','website')">
        <CENTER>Configure</CENTER></span>
  </div>
 
@@ -78,7 +78,8 @@
 
 
 <script setup lang="ts">
-import WebBronzeIcon from '@/components/app/Icons/BronzeIcon.vue';
-import GoldIcon from '@/components/app/Icons/GoldIcon.vue';
-import SilverIcon from '@/components/app/Icons/SilverIcon.vue';
+import IconWeave from '@/components/app/Icons/IconWeave.vue';
+import { useSetStorage } from '@/composables/useStorage';
+const { getwebsite } = useSetStorage();
+
 </script>

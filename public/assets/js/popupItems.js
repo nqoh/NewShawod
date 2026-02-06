@@ -1,5 +1,6 @@
 function _(x) {return document.getElementById(x)}
 function popUp(item) {
+
     if(item === 'question'){
         _('itemHeader').innerHTML="Example"
         _('itemDescription').innerHTML="A popUp like this will appear when the icon is clicked. <br> Press anywhere on the screen to close."

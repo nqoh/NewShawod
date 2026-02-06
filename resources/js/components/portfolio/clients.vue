@@ -9,7 +9,7 @@
        <h2 class="bold">Intermasiko</h2>
         <ul class="nav navbar-nav navbar-default">
          <li><a href="http://intermasiko.com"  target="_blank"><i class="fa fa-link"></i>Intermasiko.com</a></li>
-           <li><a href="websites.php"><i class="fa fa-tag"></i>Website development</a></li>
+           <li><Link :href="route('websites')"><i class="fa fa-tag"></i>Website development</Link></li>
            </ul>
            </div>
         <div class="project-info overflow">
@@ -20,10 +20,10 @@
       <div class="skills overflow">
         <h3>Resources:</h3>
           <ul class="nav navbar-nav navbar-default">
-            <li><a href="./Websites.html"><i class="fa fa-check-square"></i>Design</a></li>
-             <li><a href="websites.php"><i class="fa fa-check-square"></i>HTML/CSS</a></li>
-             <li><a href="./Websites.html"><i class="fa fa-check-square"></i>Javascript</a></li>
-             <li><a href="./Packages.html"><i class="fa fa-check-square"></i>Backend</a></li>
+             <li><i class="fa fa-check-square"></i>&nbsp;Design </li>
+             <li>&nbsp;<i class="fa fa-check-square"></i>&nbsp;HTML/TailWindCss </li>
+             <li>&nbsp;<i class="fa fa-check-square"></i>&nbsp;Vuejs</li>
+             <!-- <li><i class="fa fa-check-square"></i>Backend</li> -->
              </ul>
            </div>
        <div class="skills overflow">

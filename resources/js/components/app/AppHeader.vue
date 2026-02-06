@@ -4,27 +4,26 @@
         <div class="container">
             <div class="navbar-header">
                <toogleHeaderIcon />
-             <a class="navbar-brand" href="/">
+             <Link class="navbar-brand" :href="route('home')">
               <h1>
               <LogoIcon />
                </h1>
-             </a>          
+            </Link>          
           </div>
             <div class="collapse navbar-collapse">
                <ul class="nav navbar-nav navbar-right">
-                   <li><Link  href="home" class="bttn bttn-2">Home</Link></li>
-                   <li><Link href=""  class="bttn bttn-2">Websites</Link></li>
-                   <li><a href="packages"  class="bttn bttn-2">Packages</a></li>
-                   <li><a href="portfolio" class="bttn bttn-2">Portfolio</a></li>
-                   <li><a href="aboutus"   class="bttn bttn-2">About us</a></li>
+                   <li><Link :href="route('home')" class="bttn bttn-2">Home</Link></li>
+                   <li><Link :href="route('websites')"  class="bttn bttn-2">Websites</Link></li>
+                   <li><Link :href="route('packages')"  class="bttn bttn-2">Packages</Link></li>
+                   <li><Link :href="route('portfolio')" class="bttn bttn-2">Portfolio</Link></li>
+                   <li><Link :href="route('aboutus')"   class="bttn bttn-2">About us</Link></li>
                    <li class="dropdown"><a href="#">Services <i class="fa fa-angle-down"></i></a>
                    <ul role="menu" class="sub-menu">
-                     <li><a href="seo">S.E.O</a></li>
-                      <li><a href="hosting">Hosting</a></li>
-                      <li><a href="domain">Domains</a></li>
+                     <li><Link :href="route('seo')">S.E.O</Link></li>
+                      <li><Link :href="route('hosting')">Hosting</Link></li>
+                      <li><Link :href="route('domain')">Domains</Link></li>
                    </ul>
-                    </li> 
-                    <li> <a href="games/index.html" class="bttn bttn-2">Games</a></li>                                              
+                    </li>                                           
                    </ul>
                 </div>
             </div>
@@ -33,6 +32,7 @@
 </template>
 
 <script setup lang="ts">
+import { route } from 'ziggy-js'
 import LogoIcon from './Icons/LogoIcon.vue';
 import toogleHeaderIcon from './Icons/toogleHeaderIcon.vue';
 

@@ -7,8 +7,6 @@
     <h1> We are ready to create your <span class="typewrite" style="color:rgb(51,204,255)" data-period="100000" data-type='[ "Awesome website.", "Online Brand Ambassador." ]'></span></h1>
   </Title>
 
- 
-
 <section>
   <div class='pricing pricing-palden'>
 
@@ -38,7 +36,7 @@
 
 <script setup lang="ts">
 import BigLeague from '@/components/websites/bigLeague.vue';
-import Description from '@/components/app/Packagesdescription.vue';
+import Description from '@/components/app/PackagesDescription.vue';
 import Pacages from '@/components/websites/packages.vue';
 import OurDeal from '@/components/app/OurDeal.vue';
 import BreaCrumb from '@/components/app/BreadCrumb.vue';

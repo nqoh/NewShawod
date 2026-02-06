@@ -39,7 +39,8 @@
                         <p>Shawod serves as a resource to people with little or no web development skills to quickly own a website, what's more?
                       <br> Our websites are aesthetically simple, minimally adorned and Clutter-free, blending with your business look or personal style.</p>
                         <br>
-                        <p> To ice the cake, we are Cost-effective because here at Shawod we believe that a website should be your best business investment, not an expense. <br>Our primary goal is to ensure that your investment has a huge return.</p>
+                        <p> To ice the cake, we are Cost-effective because here at Shawod we believe that a website should be your best business investment, not an expense. 
+                        <br>Our primary goal is to ensure that your investment has a huge return.</p>
                         <p>Shawod doesn't lock you into long-term contracts, like other website development companies, because everyone should be able to afford to put their business online.</p>
                         <p><b>We are dedicated to making Stunning, affordable websites.</b></p>
                     </div>

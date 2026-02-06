@@ -89,6 +89,7 @@ function send_data(nam,email,text) {
 
 function ajax_post(n,e,t) {
     _("reference").innerHTML="Please wait...";
+    
     var ajax2 = new XMLHttpRequest();
     ajax2.open("POST","postfile.php",true);
     ajax2.setRequestHeader("Content-type","application/x-www-form-urlencoded");
@@ -101,4 +102,5 @@ function ajax_post(n,e,t) {
         }
     }
     ajax2.send("name="+_(n).value+"&emails="+_(e).value+"&text="+_(t).value);
+    
 }
