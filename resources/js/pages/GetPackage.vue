@@ -70,12 +70,12 @@
  import configpackage from '@/components/packages/getPackage/configpackage.vue';
  import submitOrder from '@/components/packages/getPackage/submitOrder.vue';
  import { modalToggle } from '@/composables/modalToggle'
+ import { onMounted, onUnmounted } from 'vue';
+
  const { modalOpen } = modalToggle();
-
- import { onMounted } from 'vue';
-
- onMounted(()=>getpackage());
-
+ onMounted(()=>getpackage(), );
+ onUnmounted(()=> localStorage.clear())
+ 
  </script>
  
  <style scoped>

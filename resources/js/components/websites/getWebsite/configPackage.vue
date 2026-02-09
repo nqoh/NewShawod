@@ -5,7 +5,7 @@
     <span>
         <i class="fa fa-minus-square btn-add btn-add"  id="span1" onclick="sub_page()"></i><span id="count1"></span>&nbsp;
         <i onclick="add_page()" class="fa fa-plus-square" style="font-size: 18px"></i>
-        <span id="state">&nbsp;<b>Web page</b> (R255.00 for each additional page)</span>&nbsp;
+        <span id="state">&nbsp;<b>Web page</b> (R125.00 for each additional page)</span>&nbsp;
          <i class="fa fa-question-circle button" @click="modalOpen" id="five" onclick="popUp('webpage')" ></i>
     </span>
         </p>
@@ -119,7 +119,6 @@
 
 <script setup lang="ts">
   import { modalToggle } from '@/composables/modalToggle'
-
   const { modalOpen } = modalToggle();
 </script>
 

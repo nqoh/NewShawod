@@ -5,9 +5,6 @@ import AppLayout from './layouts/AppLayout.vue';
 import { ZiggyVue } from 'ziggy-js';
 import { createInertiaApp, Head, Link, useForm } from '@inertiajs/vue3';
 
-
-console.log('nqobile');
-
 const appName = import.meta.env.VITE_APP_NAME || 'Shawod IT Solution';
 
 createInertiaApp({

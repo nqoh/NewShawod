@@ -1,21 +1,31 @@
+
 function _(a) {
     return document.getElementById(a)
 }
-/*window.onload=xx;
-function xx() {
-    localStorage.removeItem("feature");
-    localStorage.removeItem("price");localStorage.removeItem("page_id");
-    localStorage.removeItem("gallery");localStorage.removeItem("gallery");
-    localStorage.removeItem("form");localStorage.removeItem("form_id");
-    localStorage.removeItem("logo");localStorage.removeItem("logo_id");
-    localStorage.removeItem("cms");localStorage.removeItem("cms_id");
-    localStorage.removeItem('protected');localStorage.removeItem('protected_id');
-    localStorage.removeItem('ssl');localStorage.removeItem('ssl_id');
-    localStorage.removeItem("email");localStorage.removeItem("email_id");
-    localStorage.removeItem("ehost");localStorage.removeItem("design");
-    localStorage.removeItem("seos");
-}*/
-var p =parseFloat(localStorage.prc);
+
+
+var p = 0;
+var currentPrice = 0;
+
+var  feature='',pgs=0 , pag='',fm='',glly='',czs='',logos='',seoz='',
+sslz='',prt='',dnm='',ct='',em='',hst='',dsg='', eco=1, myseos=1,
+td_pg='',e=0,td_form='',td_gallery='',td_cms='',td_logo='',td_seo='',
+td_ssl='',td_protected='',td_domain='',td_chat='',td_email='',td_ehost='',
+td_design='',td_seos='',th='' ,g=0 , f=0 , c=0 , l=0 , ss=0 , pr=0, d=0,ch=0, designe=1;
+
+function setNewPrice(){
+    if(currentPrice != parseFloat(localStorage.prc)){
+        currentPrice = parseFloat(localStorage.prc);
+        p = parseFloat(localStorage.prc);
+         feature='';
+         pgs=0; pag='',fm='',glly='',czs='',logos='',seoz='',sslz='',prt='',
+         dnm='',ct='',em='',hst='',dsg='',ch=0,eco=1;
+         td_pg='',td_form='',td_gallery='',td_cms='',td_logo='',td_seo='',td_ssl='',
+         td_protected='',td_domain='',td_chat='',td_email='',td_ehost='',td_design='',
+         td_seos='',th='',e=0,f=0,c=0,l=0,ss=0, pr=0,d=0,designe=1,myseos=1;
+    }
+}
+
 function remove_item(add,pric,num) {
     if(add=='sab_page'){pgs=0;localStorage.removeItem("price");localStorage.removeItem("page_id");
      p-=parseFloat(pric * parseInt(num)).toFixed(2);
@@ -142,19 +152,32 @@ if(add=='sab_logo'){l=0;localStorage.removeItem("logo");localStorage.removeItem(
         create_tabe(add,'','','');
     }
 
-    if(add=='sab_design'){designe=1;localStorage.removeItem("design");localStorage.removeItem("design_id");
+    if(add=='sab_design'){
+        designe=1;localStorage.removeItem("design");localStorage.removeItem("design_id");
+        
         p-=parseFloat(pric * parseInt(num)).toFixed(2);
+        
         _("span15").style.visibility = "hidden";
+     
         _("span16").style.visibility = "hidden";
+        
         _("span17").style.visibility = "hidden";
-        _('count13').innerHTML='';
-        _("span14").style.visibility = "hidden";
+        
+        // _('count13').innerHTML='';
+        
+        // _("span14").style.visibility = "hidden";
+      
         _("spangg").style.visibility="visible";
+      
         _("spanpr").style.visibility="visible";
+        
         _("spanc").style.visibility="visible";
+        
         _("order").innerHTML="R"+parseFloat(p.toFixed(2)).toFixed(2)+" !";
         _("discount").innerHTML="R "+parseFloat(p.toFixed(2)/100*50).toFixed(2)+" (50%) non-refundable deposit of after content approval";
+        
         create_tabe(add,'','','');
+      
     }
 
     if(add=='sab_seos'){myseos=1;localStorage.removeItem("seos");localStorage.removeItem("seos_id");
@@ -172,9 +195,6 @@ if(add=='sab_logo'){l=0;localStorage.removeItem("logo");localStorage.removeItem(
     }
 
 }
-var feature='';
-var pgs=0;var pag='',fm='',glly='',czs='',logos='',seoz='',sslz='',prt='',dnm='',ct='',em='',hst='',dsg='';
-var  td_pg='',td_form='',td_gallery='',td_cms,td_logo='',td_seo='',td_ssl='',td_protected='',td_domain='',td_chat='',td_email='',td_ehost='',td_design='',td_seos='',th='';
 
 function create_tabe(add,item,num,prc) {
 
@@ -309,9 +329,10 @@ function create_tabe(add,item,num,prc) {
 }
 
 function add_page() {
+    setNewPrice();
     localStorage.setItem("price",125.00);
     localStorage.setItem("page_id",1);
-    p +=parseFloat(localStorage.price);
+    p += parseFloat(localStorage.price);
     pgs+=parseInt(localStorage.page_id);
     _('count1').innerHTML=' '+pgs+''
     _("state").innerHTML=" <b>Web Page</b> (R125.00 for each additional page)";
@@ -339,8 +360,9 @@ function sub_page() {
       create_tabe('sab_page','Web Page',pgs,'R 125.00');
     }
 }
-var f=0;
+
 function add_form() {
+    setNewPrice();
     localStorage.setItem("form",99.99);
     localStorage.setItem("form_id",1);
     p+=parseFloat(localStorage.form);
@@ -369,8 +391,9 @@ function sub_form() {
         _("span2").style.visibility="hidden";
     }
 }
-var g=0;
+
 function add_gallery() {
+    setNewPrice();
     localStorage.setItem("gallery",125.00);
     localStorage.setItem("gallery_id",1);
     p+=parseFloat(localStorage.gallery);
@@ -400,12 +423,13 @@ function sub_gallery() {
         _("span3").style.visibility="hidden";
     }
 }
-var c=0;
+
 function add_cms() {
+    setNewPrice();
     localStorage.setItem("cms",199.50);
     localStorage.setItem("cms_id",1);
     p += parseFloat(localStorage.cms);
-    c+=parseInt(localStorage.cms_id);
+    c +=parseInt(localStorage.cms_id);
     _('count4').innerHTML=' '+c+''
     _("cms").innerHTML=" <b>Content Management System</b> (R199.50 for each additional page)";
     _("order").innerHTML="R"+parseFloat(p.toFixed(2)).toFixed(2)+" !";
@@ -433,8 +457,9 @@ function sub_cms() {
     }
 
 }
-var l=0;
+
 function add_logo() {
+    setNewPrice();
     localStorage.setItem("logo",650.00);
     localStorage.setItem("logo_id",1);
     p += parseFloat(localStorage.logo);
@@ -468,42 +493,9 @@ function sub_logo() {
     }
 
 }
-/*var s=0;
-function add_seo() {
-    localStorage.setItem("seo",999.99);
-    localStorage.setItem("seo_id",1);
-    p +=parseFloat(localStorage.seo);
-    s +=parseInt(localStorage.seo_id);
-    _('count6').innerHTML=' '+s+''
-    _("seos").innerHTML=" <b>Search Engine Optimization</b> (R999.99 p/a) ";
-    _("order").innerHTML="R"+parseFloat(p.toFixed(2))+" !";
-    _("discount").innerHTML="R "+parseFloat(p.toFixed(2)/100*50).toFixed(2)+" (50%) non-refundable deposit of after content approval";
-    _("span6").style.visibility="visible";
-    /!*_("search").style.display="none";*!/
-    create_tabe('add_seo','S E O',s,localStorage.seo);
-}
-function sub_seo() {
-    p  -=parseFloat(localStorage.seo);
-    s  -=parseInt(localStorage.seo_id);
-    _("seos").innerHTML=" <b>Search Engine Optimization</b> (R999.99 p/a) ";
-    _('count6').innerHTML=' '+s+''
-    _("order").innerHTML="R"+parseFloat(p.toFixed(2))+" !";
-    _("discount").innerHTML="R "+parseFloat(p.toFixed(2)/100*50).toFixed(2)+" (50%) non-refundable deposit of after content approval";
-    create_tabe('add_seo','S E O',s,localStorage.seo);
-    if(s <= 0) {
-        /!*_("search").style.display="block";*!/
-        _("seos").innerHTML=" Search Engine Optimization (R999.99 p/a) ";
-        localStorage.removeItem('seo');s=0;
-        _('count6').innerHTML=' '
-        localStorage.removeItem('seo_id');
-        create_tabe('sab_seo','S E O',s,localStorage.seo);
-        _("span6").style.visibility = "hidden";
 
-    }
-}*/
-
-var ss=0;
 function add_ssl() {
+    setNewPrice();
     localStorage.setItem("ssl",1300.00);
     localStorage.setItem("ssl_id",1);
     p +=parseFloat(localStorage.ssl);ss=1;
@@ -528,8 +520,8 @@ function sub_ssl() {
 
 }
 
-var pr=0;
 function add_protected() {
+    setNewPrice();
     localStorage.setItem("protected",349.99);
     localStorage.setItem("protected_id",1);
     p +=parseFloat(localStorage.protected);
@@ -553,12 +545,10 @@ function sub_protected() {
     _('count7').innerHTML=''
         create_tabe('sab_protected',' Protected Registration ',pr,localStorage.protected);
     _("span8").style.visibility = "hidden";
-
-
 }
 
-var d=0;
 function add_domain() {
+    setNewPrice();
     localStorage.setItem("domain",200.00);
     localStorage.setItem("domain_id",1);
     p +=parseFloat(localStorage.domain);
@@ -582,11 +572,10 @@ function sub_domain() {
         localStorage.removeItem('domain');localStorage.removeItem('domain_id');d=0;
         create_tabe('sab_domain', 'Domain Infor.Locker ',d,localStorage.domain);
         _("span9").style.visibility = "hidden";
-
 }
 
-var ch=0;
 function add_chat() {
+    setNewPrice();
     localStorage.setItem("chat",800.00);
     localStorage.setItem("chat_id",1);
     p +=parseFloat(localStorage.chat);
@@ -612,12 +601,11 @@ function sub_chat() {
         localStorage.removeItem('basic');localStorage.removeItem('basic');ch=0;
         create_tabe('sab_chat', 'Basic Chat Zone  ',ch,localStorage.chat);
         _("span10").style.visibility = "hidden";
-
     }
 }
 
-var e=0;
 function add_email() {
+    setNewPrice();
     localStorage.setItem("email",50.00);
     localStorage.setItem("email_id",1);
     p +=parseFloat(localStorage.email);
@@ -625,7 +613,7 @@ function add_email() {
     _('count10').innerHTML=' '+e+''
     _("mail").innerHTML=" 5 <b>Webmail Account</b> (R50.00) ";
     _("order").innerHTML="R"+parseFloat(p.toFixed(2))+" !";
-    _("discount").innerHTML="R "+parseFloat(p.toFixed(2)/100*50).toFixed(2)+" (50%) non-refundable deposit of after content approval";
+    _("discount").innerHTML="R "+ parseFloat(p.toFixed(2)/100*50).toFixed(2) + " (50%) non-refundable deposit of after content approval";
     _("span11").style.visibility="visible";
     create_tabe('add_email',' Webmail Account ',e,localStorage.email);
 }
@@ -646,8 +634,9 @@ function sub_email() {
 
     }
 }
-var designe=1
+
 function add_designg() {
+    setNewPrice();
     _('span15').style.visibility="visible"
     _("spangg").style.visibility="hidden"
     _("spanc").style.visibility="visible"
@@ -662,6 +651,7 @@ function add_designg() {
     create_tabe('add_design',' General Design ',designe,localStorage.design);
 }
 function add_designpr() {
+    setNewPrice();
     _('span16').style.visibility="visible"
     _("spanpr").style.visibility="hidden"
     _("spanc").style.visibility="visible"
@@ -686,7 +676,7 @@ function add_designpr() {
     }
 }
 function add_designc() {
-
+    setNewPrice();
     _('span17').style.visibility="visible"
     _("spanc").style.visibility="hidden"
     _("spanpr").style.visibility="visible"
@@ -742,10 +732,8 @@ function sub_designc() {
     localStorage.removeItem("designe");
 }
 
-
-
-var eco=1;
 function add_hoste() {
+    setNewPrice();
     _('span12').style.visibility="visible";
     _("spanp").style.visibility="visible";
     _("spang").style.visibility="visible";
@@ -761,10 +749,8 @@ function add_hoste() {
 
 }
 
-
-
-
 function add_hostp() {
+    setNewPrice();
     _('span13').style.visibility="visible";
     _('spane').style.visibility="visible";
     _("spang").style.visibility="visible";
@@ -779,8 +765,8 @@ function add_hostp() {
     create_tabe('add_ehost',' Duluxe Hosting ',eco,localStorage.ehost);
 }
 
-
 function add_hostg() {
+    setNewPrice();
     _('span14').style.visibility="visible";
     _("spanp").style.visibility="visible";
     _('spane').style.visibility="visible";
@@ -822,8 +808,9 @@ function sub_hostg() {
     create_tabe('sab_ehost',' Premium Hosting ',eco,localStorage.ehost);
     localStorage.removeItem("ehost");
 }
-var myseos=1;
+
 function add_seog() {
+    setNewPrice();
     _("seop").style.visibility="visible";
     _("seoc").style.visibility="visible";
     _("span18").style.visibility="visible";
@@ -862,6 +849,7 @@ function sub_seog() {
 }
 
 function add_seop() {
+    setNewPrice();
     _("seop").style.visibility="hidden";
     _("span19").style.visibility="visible";
     _("span18").style.visibility="hidden";
@@ -890,6 +878,7 @@ function sub_seop() {
 }
 
 function add_seoc() {
+    setNewPrice();
     _("seop").style.visibility="visible";
     _("span20").style.visibility="visible";
     _("seog").style.visibility="visible";

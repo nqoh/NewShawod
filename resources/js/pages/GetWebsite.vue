@@ -68,11 +68,13 @@
  import configPackage from '@/components/websites/getWebsite/configPackage.vue';
  import submitOrder from '@/components/packages/getPackage/submitOrder.vue';
  import {getwebsite} from '@/composables/GetWebsite';
- import { onMounted } from 'vue';
+ import { onMounted, onUnmounted } from 'vue';
  import { modalToggle } from '@/composables/modalToggle'
 
  const { modalOpen } = modalToggle();
  onMounted(()=> getwebsite() );
+ onUnmounted(()=> localStorage.clear())
+ 
 </script>
 
 <style scoped>

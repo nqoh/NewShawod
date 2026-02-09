@@ -41,8 +41,9 @@ import Pacages from '@/components/websites/packages.vue';
 import OurDeal from '@/components/app/OurDeal.vue';
 import BreaCrumb from '@/components/app/BreadCrumb.vue';
 import Title from '@/components/app/Title.vue';
+import { onMounted } from 'vue';
 
-
+ onMounted(()=>localStorage.clear())
 </script>
 
 <style scoped>

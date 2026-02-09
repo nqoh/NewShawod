@@ -35,9 +35,11 @@ import Packagesdescription from '@/components/app/PackagesDescription.vue';
 import Title from '@/components/app/Title.vue';
 import BigLeague from '@/components/packages/bigLeague.vue';
 import packages from '@/components/packages/packages.vue';
+import { onMounted } from 'vue';
 
    
-
+   
+    onMounted(()=> localStorage.clear());
    </script>
    
    <style scoped>
