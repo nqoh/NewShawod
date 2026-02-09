@@ -27,6 +27,11 @@ Route::middleware('guest')->group(function(){
    // Route::inertia('/howtocreatewebsite','HowToCreateWebsite')->name('howtocreatewebsite');
     Route::inertia('/portal/login','Portal/Auth/Login')->name('portal');
     Route::inertia('/blog','Blog')->name('blog');
+    Route::inertia('/blog1','Blog1')->name('blog1');
+    Route::inertia('/blog2','Blog2')->name('blog2');
+    Route::inertia('/blog3','Blog3')->name('blog3');
+    Route::inertia('/blog4','Blog4')->name('blog4');
+    Route::inertia('/blog5','Blog5')->name('blog5');
     Route::inertia('/faq','Faqs')->name('faq');
     Route::inertia('/privacy','Privacy')->name('privacy'); 
     Route::inertia('/terms','Terms')->name('terms');
