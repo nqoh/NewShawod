@@ -97,7 +97,7 @@
     </div>
 </div>
 
-<div class='form hidden' style="margin-top: 5px;" >
+<!-- <div class='form hidden' style="margin-top: 5px;" >
         <h3 class='heading' align="center">How do you feel about our customer service?</h3>
         <div  class='sliding-list'>
             <ul id='list'>
@@ -122,7 +122,7 @@
         <div class='col-md-offset-0'>
             <button class='btn-lg btn-primary' id="btn_submit" style="background: #33ccff" onclick="send_feedback()">Send feedback</button>
         </div>
-    </div>
+    </div> -->
 
     </div>
 </template>
