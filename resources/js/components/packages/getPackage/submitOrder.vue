@@ -128,10 +128,7 @@
 </template>
 
 <script setup lang="ts">
-  import { RateSmile } from '@/composables/RateSmile'
-  import { onMounted } from 'vue';
 
-  onMounted(()=> RateSmile());
 </script>
 
 <style scoped>
