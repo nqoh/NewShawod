@@ -14,9 +14,9 @@ return new class extends Migration
         Schema::create('coupons', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->interger('percentage');
-            $table->boolean('satus');
-            $table->interger('used');
+            $table->integer('percentage');
+            $table->boolean('status');
+            $table->integer('used');
             $table->timestamps();
         });
     }
