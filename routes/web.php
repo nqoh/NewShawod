@@ -43,3 +43,13 @@ Route::middleware('auth')->group(function(){
 
 });
 
+
+Route::get('/test', function(){
+    return view('emails.orderConfirmation', [
+        'name' => 'Nqobile',
+        'package' => 'Bronze package',
+        'reference' => 'WP1099',
+        'price' => 2999.99,
+        'created_at' => now()
+    ]);
+});
