@@ -15,12 +15,12 @@ return new class extends Migration
             $table->id();
             $table->foreignId('user_id')->constrained('users')->cascadeOnDelete();
             $table->string('package');
-            $table->longTex('description');
-            $table->longTex('features')->nullable();;
+            $table->longText('description');
+            $table->longText('features')->nullable();;
             $table->string('reference');
-            $table->string('project_folder_id');
+            $table->string('project_folder_id')->nullable();
             $table->boolean('status')->default(0);
-            $table->double('amount');
+            $table->decimal('price',8,2);
             $table->integer('coupon_id')->nullable();
             $table->timestamps();
         });

@@ -1,11 +1,16 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\v1\AuthController;
 
-Route::domain('portal.shawod.co.za')->group(function(){
-  Route::get('/', function(){
-    return "testing";
-  });
+Route::domain('portal.shawod.co.za')->middleware(['web'])->group(function(){
+    Route::inertia('/','auth/Login')->name('login');
+    Route::post('/Login', [AuthController::class, 'Login'])->name('Login');
+    Route::post('/logout', [AuthController::class, 'Logout'])->name('Logout');
+
+    Route::middleware('auth')->group(function(){
+
+    });
 
 });
 
@@ -24,7 +29,6 @@ Route::middleware('guest')->group(function(){
     Route::inertia('/domain','Domain')->name('domain');
     Route::inertia('/getpackage','GetPackage')->name('getpackage');
     Route::inertia('/getwebsite','GetWebsite')->name('getwebsite');
-   // Route::inertia('/howtocreatewebsite','HowToCreateWebsite')->name('howtocreatewebsite');
     Route::inertia('/portal/login','Portal/Auth/Login')->name('portal');
     Route::inertia('/blog','Blog')->name('blog');
     Route::inertia('/blog1','Blog1')->name('blog1');
@@ -37,9 +41,5 @@ Route::middleware('guest')->group(function(){
     Route::inertia('/terms','Terms')->name('terms');
     
 });
-});
-
-Route::middleware('auth')->group(function(){
-
 });
 

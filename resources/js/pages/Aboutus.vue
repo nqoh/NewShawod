@@ -48,10 +48,11 @@
             </div>
         </div>
      </section>
-
+     <WhatsApp />
 </template>
 
 <script setup lang="ts">
+import WhatsApp from '@/components/app/WhatsApp.vue'
 import MissionVision from '@/components/about/mission&vision.vue';
 import Skills from '@/components/about/skills.vue';
 import WhoAreWe from '@/components/about/whoAreWe.vue';

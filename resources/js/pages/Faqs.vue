@@ -207,10 +207,11 @@ Also refer to <Link :href="route('howitworks')"> how it works </Link> for more c
             </div>
         </div>
 </section>
-
+<WhatsApp />
 </template>
 
 <script setup lang="ts">
+ import WhatsApp from '@/components/app/WhatsApp.vue'
 import BreadCrumb from '@/components/app/BreadCrumb.vue';
 import { route } from 'ziggy-js';
 </script>

@@ -25,10 +25,11 @@
  <BigLeague />
 
    </div>
-    
+   <WhatsApp />
    </template>
    
 <script setup lang="ts">
+import WhatsApp from '@/components/app/WhatsApp.vue'
 import BreaCrumb from '@/components/app/BreadCrumb.vue';
 import OurDeal from '@/components/app/OurDeal.vue';
 import Packagesdescription from '@/components/app/PackagesDescription.vue';

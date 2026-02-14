@@ -4,10 +4,11 @@
      <step1 />
     <step2 />
 </div>
-
+<WhatsApp />
 </template>
 
 <script setup lang="ts">
+import WhatsApp from '@/components/app/WhatsApp.vue'
 import BreadCrumb from '@/components/app/BreadCrumb.vue';
 import step1 from '@/components/howtocreatewebsite/step1.vue';
 import step2 from '@/components/howtocreatewebsite/step2.vue';

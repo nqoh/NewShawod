@@ -1,7 +1,3 @@
-/**
- * Created by NQOBILE on 2016/09/27.
- */
- 
 function _(x){
     return document.getElementById(x);
 }
@@ -11,13 +7,14 @@ function mouse_in(nm) {
 function name_out(nx,error) {
     if(_(nx).value !="") {
         if (_(nx).value.trim().length < 3) {
-            _(error).innerHTML = "Three or more characters allowed"
+            _(error).innerHTML = "Enter three or more characters"
             _(nx).style.border="1px solid red";
-            _(nx).value=""
+            _(nx).focus();
             return false
         } else {
             if (_(nx).value.trim().match('^[0-9]')) {
-                _(error).innerHTML = "First Name can't start with number"
+                _(error).innerHTML = "Name can't start with number"
+                _(nx).focus();
                 _(nx).value=""
                 return false
             } else {
@@ -26,8 +23,9 @@ function name_out(nx,error) {
             }
         }
     }else{
-        _(error).innerHTML = "Enter your first name"
+        _(error).innerHTML = "Enter your name"
         _(nx).style.border="1px solid red";
+        _(nx).focus();
         _(nx).value=""
         return false
     }
@@ -36,13 +34,14 @@ function name_out(nx,error) {
 function name_last(nx,error) {
     if(_(nx).value !="") {
         if (_(nx).value.trim().length < 3) {
-            _(error).innerHTML = "Three or more characters allowed"
+            _(error).innerHTML = "Enter three or more characters"
+            _(nx).focus();
             _(nx).style.border="1px solid red";
-            _(nx).value=""
             return false
         } else {
             if (_(nx).value.trim().match('^[0-9]')) {
-                _(error).innerHTML = "Last Name can't start with number"
+                _(error).innerHTML = "Surname can't start with number";
+                _(nx).focus();
                 _(nx).value=""
                 return false
             } else {
@@ -51,7 +50,8 @@ function name_last(nx,error) {
             }
         }
     }else{
-        _(error).innerHTML = "Enter your last name"
+        _(error).innerHTML = "Enter your surname"
+        _(nx).focus();
         _(nx).value=""
         return false
     }
@@ -61,24 +61,24 @@ function name_last(nx,error) {
 function email(e,r) {
     if(_(e).value.trim() !=""){
         if(_(e).value.indexOf('@') > -1 && _(e).value.lastIndexOf('.') > -1){
-            _(r).innerHTML="<span style='color:green'>Please wait...</span>";
             _(e).style.border="none";
-              check_email(e,r);
+            _(r).innerHTML="";
         }else{
             _(r).innerHTML="Invalid email address";
             _(e).style.border="1px solid red";
-            _(e).value=""
+            _(e).focus();
             return false
         }
     }else{
         _(r).innerHTML="Enter email address";
         _(e).style.border="1px solid red";
         _(e).value=""
+        _(e).focus();
         return false
     }
 }
 
-function contacts(c,error){
+function phone(c,error){
     if(_(c).value.trim() != ""){
         if(_(c).value.trim().length == 10){
             var contact = _(c).value.split('');
@@ -90,19 +90,22 @@ function contacts(c,error){
                     }else{
                         _(error).innerHTML="Invalid contact number";
                         _(c).style.border="1px solid red";
+                        _(c).focus()
                         _(c).value=""
                         break
                         return false
                     }
             }
         }else{
-            _(error).innerHTML="Enter 10 digit of contact number";
+            _(error).innerHTML="Enter 10 digit of phone number";
             _(c).style.border="1px solid red";
+            _(c).focus();
             _(c).value=""
         }
     }else{
-        _(error).innerHTML = "Enter contact number";
+        _(error).innerHTML = "Enter phone number";
         _(c).style.border="1px solid red";
+        _(c).focus()
         _(c).value=""
 }
 }
@@ -112,13 +115,13 @@ function website(vl,rx) {
         if(_(vl).value.trim().length < 30){
             _(rx).innerHTML="Write some description 30 or more characters";
             _(vl).style.border="1px solid red";
-            _(vl).value="";
+            _(vl).focus()
             return false
         }
     }else{
         _(rx).innerHTML="Write description of your website";
         _(vl).style.border="1px solid red";
-        _(vl).value="";
+        _(vl).focus()
         return false
     }
     _(rx).innerHTML="";
@@ -127,37 +130,38 @@ function website(vl,rx) {
 
 
 function send_data(nam,lname,email,contact,text) {
+_('errors').style.display= "none"
 
 var packname=localStorage.package;
 var d = localStorage.discounts;
 
     if(_(nam).value.trim().length < 3){
         _(nam).style.border="1px solid red"
-        _(nam).value=""
+        _('name_error').innerHTML = "Three or more characters allowed"
         return false
     }
 
     if(_(lname).value.trim().length < 3){
         _(lname).style.border="1px solid red"
-        _(lname).value=""
+        _('surname_error').innerHTML = "Three or more characters allowed"
         return false
     }
 
     if(_(email).value === ""){
         _(email).style.border="1px solid red"
-        _(email).value=""
+        _('email_error').innerHTML = "Enter email address"
         return false
     }
 
     if(_(contact).value.length !== 10){
         _(contact).style.border="1px solid red"
-        _(contact).value=""
+         _('phone_error').innerHTML = "Enter phone number"
         return false
     }
 
     if(_(text).value.trim().length < 30){
         _(text).style.border="1px solid red"
-        _(text).value=""
+       _('error_coment').innerHTML = "Write some description 30 or more characters"
         return false
     }
 
@@ -172,36 +176,21 @@ var d = localStorage.discounts;
             _(arry[i]).style.border="none";
         }
     }
+
    if(_(nam).value.trim() !=="" && _(email).value.trim() !== "" && _(text).value.trim() !==""){
         var p = parseFloat(_('order').innerHTML.substr(1, _('order').innerHTML.length - 2))
-     ajax_post(nam,lname,email,contact,text,packname,parseFloat(p.toFixed(2)/100*50).toFixed(2),p.toFixed(2),feature);
+     storeUserProject(nam,lname,email,contact,text,packname,parseFloat(p.toFixed(2)/100*50).toFixed(2),p.toFixed(2),feature);
 	// localStorage.removeItem("discounts");
    }
 }
 
-function check_email(email,r) {
-   var ajax = new XMLHttpRequest();
-       ajax.open("POST","postfile_pack.php",true);
-       ajax.setRequestHeader("Content-type","application/x-www-form-urlencoded");
-       ajax.onreadystatechange=function () {
-           if(ajax.readyState == 4 && ajax.status==200){
-               if(ajax.responseText === 'You are already a client, order new services on Portal'){
-                   _(r).innerHTML=ajax.responseText
-                   _(email).value=""
-                   _(email).style.border="1px solid red"
-               }
-               _(r).innerHTML=ajax.responseText
-           }
-       }
-       ajax.send("email="+_(email).value);
-}
 
 
-async function ajax_post(n,ln,e,c,t,pp,d,pr,f) {
+async function storeUserProject(n,ln,e,c,t,pp,deposite,pr,f) {
+  
     _("btn_submit").innerHTML="Please wait...";
     _("btn_submit").setAttribute('disabled','disabled')
-   //  _("reference").style.display="block"
-   // _("reference").innerHTML="Please for reference"
+    
    const data = {
     name : _(n).value,
     surname: _(ln).value,
@@ -209,39 +198,42 @@ async function ajax_post(n,ln,e,c,t,pp,d,pr,f) {
     phone: _(c).value,
     description: _(t).value,
     package: pp,
-    coupon_id:d,
-    price: pr,
+    coupon_id: localStorage.coupon_id,
+    price: parseInt(pr).toFixed(2),
     features: f,
-    type: localStorage.get('type')
+    type: localStorage.type
    }
-   alert(data); return false;
 
-//    ajax.send("name="+_(n).value+"&lastname="+_(ln).value+"&emails="+_(e).value+"&contact="+_(c).value+"&text="+_(t).value+"&pack="+pp+"&discount="+d+"&price="+pr+"&feature="+f);
-//     try{
-//         const response = await fetch('http://shawod.co.za/api/v1/store',{
-//             method: 'POST',
-//             headers:{
-//                 'Content-type': 'application/json',
-//                 'Accept' : 'application/json',
-//                 'X-CSRF-TOKEN' : document.querySelector('meta[name="csrf-token"]').getAttribute('content')
-//             },
-//             body:
-//         })
-//     }
+    try{
+        const response = await fetch('api/v1/store', {
+            method: 'POST',
+            headers:{
+                'Content-type': 'application/json',
+                'Accept' : 'application/json',
+                'X-CSRF-TOKEN' : document.querySelector('meta[name="csrf-token"]').getAttribute('content')
+            },
+            body: JSON.stringify(data)
+        });
 
-//     var ajax = new XMLHttpRequest();
-//     ajax.open("POST","postfile_pack.php",true);
-//     ajax.setRequestHeader("Content-type","application/x-www-form-urlencoded");
-//     ajax.onreadystatechange=function () {
-//         if(ajax.readyState == 4 && ajax.status==200){
-//             _("btn_submit").removeAttribute('disabled')
+         const result  = await response.json();
 
-//            // _("reference").innerHTML = ajax.responseText
-//             _(n).value="";_(e).value="";_(c).value="";_(t).value="";
-//             _('success').style.display ="block"
-//             _('submitbtn').style.display="none"
-//         }
-//     }
-    // ajax.send("name="+_(n).value+"&lastname="+_(ln).value+"&emails="+_(e).value+"&contact="+_(c).value+"&text="+_(t).value+"&pack="+pp+"&discount="+d+"&price="+pr+"&feature="+f);
+         if(response.ok){
+            _("btn_submit").removeAttribute('disabled')
+            _(n).value="";_(e).value="";_(c).value="";_(t).value="";_(ln).value="";
+            _('success').style.display ="block"
+            _('btn_submit').style.display="none"
+            localStorage.removeItem('coupon_id')
+         }else{
+            _('errors').style.display = "block"
+            _('errors').innerHTML = result.errors.email;
+            _("btn_submit").innerHTML="Submit order";
+            _("btn_submit").setAttribute('disabled','disabled')
+            _("btn_submit").removeAttribute('disabled')
+         }
+       
+    }catch(error){
+       _('errors').style.display = "block"
+       _('errors').innerHTML = error;
+    }
 }
 

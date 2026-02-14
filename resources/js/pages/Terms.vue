@@ -117,9 +117,11 @@
             </div>
         </div>
      </section>
+     <WhatsApp />
 </template>
 
 <script setup lang="ts">
+import WhatsApp from '@/components/app/WhatsApp.vue';
 import BreadCrumb from '@/components/app/BreadCrumb.vue';
 </script>
 

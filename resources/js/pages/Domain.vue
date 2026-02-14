@@ -16,10 +16,11 @@
   </Title>
 
   <OurDeal  title="Shawod Domains" description="Self managed domains are not yet available, we however get one for you on one of our Registrar partners if you purchase a package." />
- 
+  <WhatsApp />
 </template>
 
 <script setup lang="ts">
+ import WhatsApp from '@/components/app/WhatsApp.vue'
 import BreadCrumb from '@/components/app/BreadCrumb.vue';
 import OurDeal from '@/components/app/OurDeal.vue';
 import Title from '@/components/app/Title.vue';

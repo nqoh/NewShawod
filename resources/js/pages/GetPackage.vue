@@ -59,10 +59,11 @@
 
 
 </div>
-    
+<WhatsApp />
  </template>
  
  <script setup lang="ts">
+ import WhatsApp from '@/components/app/WhatsApp.vue'
  import BreadCrumb from '@/components/app/BreadCrumb.vue';
  import Title from '@/components/app/Title.vue';
  import { getpackage } from '@/composables/getpackage'

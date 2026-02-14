@@ -17,7 +17,10 @@ class CouponFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'name' => 'shawod30',
+            'percentage' => 30,
+            'status' => 1,
+            'used' => 0
         ];
     }
 }

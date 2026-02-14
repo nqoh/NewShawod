@@ -30,11 +30,13 @@
 
   </div>
  </section>
+ <WhatsApp />
 </div>
- 
+
 </template>
 
 <script setup lang="ts">
+import WhatsApp from '@/components/app/WhatsApp.vue';
 import BigLeague from '@/components/websites/bigLeague.vue';
 import Description from '@/components/app/PackagesDescription.vue';
 import Pacages from '@/components/websites/packages.vue';
