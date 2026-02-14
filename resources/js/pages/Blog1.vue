@@ -84,9 +84,11 @@
         </div>
     </section>
   </div>
+  <WhatsApp />
 </template>
 
 <script setup lang="ts">
+ import WhatsApp from '@/components/app/WhatsApp.vue'
 import BreadCrumb from '@/components/app/BreadCrumb.vue';
 import { route } from 'ziggy-js';
 import related from '@/components/blog/related.vue';

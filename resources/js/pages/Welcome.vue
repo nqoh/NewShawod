@@ -245,11 +245,12 @@
             </div>
         </div>
      </section>
-
+     <WhatsApp />
     </div>
 </template>
 
 <script setup lang="ts">
+import WhatsApp from '@/components/app/WhatsApp.vue';
 import { onMounted } from 'vue';
 import { route } from 'ziggy-js'
 import { homeSlider }  from '@/composables/HomeSlider';

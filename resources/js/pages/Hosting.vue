@@ -16,10 +16,11 @@
    </Title>
 
 <OurDeal title="Hosting packages" description="Self service servers are not yet available at Shawod, for now you can get shared hosting." />
-
+<WhatsApp />
 </template>
 
 <script setup lang="ts">
+import WhatsApp from '@/components/app/WhatsApp.vue'
 import BreadCrumb from '@/components/app/BreadCrumb.vue';
 import OurDeal from '@/components/app/OurDeal.vue';
 import Title from '@/components/app/Title.vue';

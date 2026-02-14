@@ -38,10 +38,11 @@ Your website is then reviewed for errors and any necessary revisions are made. W
             </div>
         </div>
      </section>
-
+     <WhatsApp />
 </template>
 
 <script setup lang="ts">
+import WhatsApp from '@/components/app/WhatsApp.vue'
  import BreadCrumb from '@/components/app/BreadCrumb.vue';
  import { route  } from 'ziggy-js';
 </script>

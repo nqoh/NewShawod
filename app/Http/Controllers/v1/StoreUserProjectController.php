@@ -25,6 +25,7 @@ class StoreUserProjectController extends Controller
             $password = Str::random(6);
 
             $user = User::create([
+                 'role_id' => 1,  
                  'name' => $request->name,
                  'surname' => $request->surname,
                  'phone' => $request->phone,
@@ -57,7 +58,8 @@ class StoreUserProjectController extends Controller
             return response()->json([
                 'Status' => 'Successful',
                 'Message' => 'Your order was successful submitted ! check you email address',
-                'StatusCode' => 201
+                'StatusCode' => 201,
+                'password' => $password
            ]);
 
 
