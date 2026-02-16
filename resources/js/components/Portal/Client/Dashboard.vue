@@ -21,12 +21,9 @@
         <!-- <p>You don't have any Outstanding Payments for now </p> -->
        <br>
         <div class='col-md-offset-0' style="margin-left:  0%;">
-        <button class='btn-lg btn-primary'>Pay Now</button>
+        <button class='btn-lg btn-primary' @click="$emit('update:modelValue', Payment)">Pay Now</button>
         </div>
       </div> 
-
-  
-
 
 	  <div class='form hidden' style="margin-left: 65%; " >
         <h3 class='heading' align="center">How do you feel about our customer service?</h3>
@@ -66,8 +63,8 @@
 
 <script setup lang="ts">
   import { RateSmile } from '@/composables/RateSmile';
-import { onMounted } from 'vue';
-
+  import { onMounted } from 'vue';
+   import Payment from './Payment.vue';
   onMounted(()=>RateSmile())
 </script>
 
