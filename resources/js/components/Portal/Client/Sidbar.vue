@@ -1,5 +1,6 @@
 <template>
     <div>
+	
         <section id="sidebar">
 		<a href="#" class="brand">
 			<!-- <span class="text">SHAWOD PORTAL</span> -->
@@ -18,12 +19,7 @@
 					<span class="text" >Project</span>
 				</a>
 			</li><br>
-			<!-- <li>
-				<a href="#"  @click="$emit('update:modelValue',Features)">
-					<i class='bx bxs-doughnut-chart bx-sm' ></i>
-					<span class="text">Features</span>
-				</a>
-			</li><br> -->
+
 			<li>
 				<a href="#"  @click="$emit('update:modelValue',Notification)">
 					<i class='bx bxs-message-dots bx-sm' ></i>
@@ -45,12 +41,13 @@
 		</ul>
 		<ul class="side-menu bottom" >
 			<li >
-				<a href="#" class="logout " @click="Logout">
+				<a href="#" class="logout " @click="router.post(route('Logout'))">
 					<i class='bx bx-power-off bx-sm bx-burst-hover' ></i>
 					<span class="text">Logout</span>
 				</a>
 			</li>
 		</ul>
+	
 	</section>
     </div>
 </template>
@@ -63,12 +60,8 @@
   import Settings from './Settings.vue';
   import { route } from 'ziggy-js';
   import { router } from '@inertiajs/vue3';
-  defineModel('modelValue');
-  
-  const Logout = ()=>{
-	router.post(route('Logout'));
-  }
 
+  
 </script>
 
 <style scoped>

@@ -8,12 +8,6 @@
           <KeepAlive >
             <component :is="selectedComponent"  />
          </KeepAlive>
-       
-    
-         <!-- <div style="	background: var(--grey);" align="center">
-           <p align="center" class="nv"><a target="_black" href="http://shawod.co.za/terms">Terms of Services</a>&nbsp;|&nbsp;
-           <a target="_black" href="http://shawod.co.za/privacy" >Privacy Policy</a></p>
-        </div> -->
 
       </section>
 
@@ -26,14 +20,14 @@
   import Navbar from '@/components/Portal/Client/Navbar.vue';
   import Dashboard from '@/components/Portal/Client/Dashboard.vue';
   import { ClientDashboard } from '@/composables/ClientDashboard'
-  import { onMounted, ref } from 'vue';
+  import { onMounted , ref } from 'vue';
 
   defineOptions({ layout : ''})
 
   onMounted(()=> ClientDashboard());
 
   const selectedComponent = ref(Dashboard);
-
+ 
 </script>
 
 <style scoped>
