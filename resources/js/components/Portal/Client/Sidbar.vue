@@ -45,7 +45,7 @@
 		</ul>
 		<ul class="side-menu bottom" >
 			<li >
-				<a href="#" class="logout ">
+				<a href="#" class="logout " @click="Logout">
 					<i class='bx bx-power-off bx-sm bx-burst-hover' ></i>
 					<span class="text">Logout</span>
 				</a>
@@ -58,12 +58,17 @@
 <script setup lang="ts">
   import Project from './Project.vue';
   import Dashboard from './Dashboard.vue';
-  import Features from './Features.vue';
   import Notification from './Notification.vue';
   import Payment from './Payment.vue';
   import Settings from './Settings.vue';
+  import { route } from 'ziggy-js';
+  import { router } from '@inertiajs/vue3';
   defineModel('modelValue');
   
+  const Logout = ()=>{
+	router.post(route('Logout'));
+  }
+
 </script>
 
 <style scoped>
