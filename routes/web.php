@@ -10,6 +10,7 @@ use App\Models\Rate;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Inertia\Inertia;
 
 Route::inertia('login','auth/Login')->name('login');
 
@@ -44,6 +45,11 @@ Route::domain('portal.shawod.co.za')->group(function(){
        Route::post('/updatePassword', [ResetPasswordController::class, 'updatePassword'])->name('updatePassword');
        Route::post('/DeleteNotification', [NotificationController::class,'delete'])->name('DeleteNotification');
        Route::post('/cancellation', [CancellationController::class,'store'])->name('cancellation');
+
+       ///Admin Routes
+       Route::get('/', function(){
+        return Inertia('Portal/Admin/Dashboard');
+       })->name('AdminDashboard');
 
     });
 
