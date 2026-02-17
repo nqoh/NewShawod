@@ -107,35 +107,6 @@
         </div>
     </div>
 </div>
-
-<!-- <div class='form hidden' style="margin-top: 5px;" >
-        <h3 class='heading' align="center">How do you feel about our customer service?</h3>
-        <div  class='sliding-list'>
-            <ul id='list'>
-                <li>Absolutely Terrible!</li>
-                <li>Disappointing</li>
-                <li>Quite Bad hey</li>
-                <li>Not impressed</li>
-                <li>Nothing to be proud of</li>
-                <li>Could have been better</li>
-                <li>Ok, I guess</li>
-                <li>Satisfactory</li>
-                <li>Was Great</li>
-                <li>Super Impressed!</li>
-            </ul>
-        </div>
-        <input class='slider' max='99' min='0' id="slider" style="margin: 0px auto" align="center" oninput='updateSlider(value)' type='range' value='80'>
-    </div>
-
-  
-
-    <p align="center" id="rateSuccess">Thank you for rating us</p>
-    <div class='form-group' id="ratebtn">
-        <div class='col-md-offset-0'>
-            <button class='btn-lg btn-primary' id="btn_submit" style="background: #33ccff" onclick="send_feedback()">Send feedback</button>
-        </div>
-    </div>   -->
-
     </div>
 </template>
 

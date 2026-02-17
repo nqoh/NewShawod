@@ -3,16 +3,23 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\v1\AuthController;
 
-Route::domain('portal.shawod.co.za')->middleware(['web'])->group(function(){
+
+Route::inertia('login','auth/Login')->name('login');
+
+Route::domain('portal.shawod.co.za')->group(function(){
+
+    Route::middleware('guest')->group(function(){
     Route::inertia('/','auth/Login')->name('login');
     Route::post('/Login', [AuthController::class, 'Login'])->name('Login');
     Route::post('/logout', [AuthController::class, 'Logout'])->name('Logout');
+   });
 
     Route::middleware('auth')->group(function(){
-
+       Route::inertia('/', 'Portal/Client/Dashboard')->name('ClientDashboard');
     });
 
 });
+
 
 Route::domain('shawod.co.za')->group(function(){
 Route::middleware('guest')->group(function(){
@@ -39,7 +46,6 @@ Route::middleware('guest')->group(function(){
     Route::inertia('/faq','Faqs')->name('faq');
     Route::inertia('/privacy','Privacy')->name('privacy'); 
     Route::inertia('/terms','Terms')->name('terms');
-    
 });
 });
 

@@ -46,8 +46,8 @@
 
 <script setup lang="ts">
   defineOptions({ layout : ''})
-  import { useForm } from '@inertiajs/vue3';
-
+  import { useForm, usePage } from '@inertiajs/vue3';
+  import { watch } from 'vue';
   import { route  } from 'ziggy-js';
    
   const form  = useForm({
@@ -62,11 +62,11 @@
     })
   }
 
-  // const page  = usePage();
+  const page  = usePage();
 
-  // watch(()=>page.props.LoginError, ()=>{
-  //    setTimeout(()=> page.props.LoginError = '', 3000);
-  // })
+  watch(()=>page.props.LoginError, ()=>{
+     setTimeout(()=> page.props.LoginError = '', 3000);
+  })
   
 
 </script>
@@ -87,6 +87,7 @@
 
    .error{
     padding: 5px;
+    margin-top: 5px;
     border: 1px solid  white;
     background-color: red;
     color: white;
