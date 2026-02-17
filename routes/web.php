@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\v1\AuthController;
+use App\Http\Controllers\v1\auth\AuthController;
+use App\Http\Controllers\v1\auth\ResetPasswordController;
 use App\Http\Controllers\v1\CancellationController;
 use App\Http\Controllers\v1\NotificationController;
 use App\Http\Resources\NotificationsResource;
@@ -9,22 +10,24 @@ use App\Models\Rate;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Inertia\Inertia;
 
 Route::inertia('login','auth/Login')->name('login');
 
 Route::domain('portal.shawod.co.za')->group(function(){
-
     Route::middleware('guest')->group(function(){
     Route::inertia('/','auth/Login')->name('login');
     Route::post('/Login', [AuthController::class, 'Login'])->name('Login');
     Route::post('/logout', [AuthController::class, 'Logout'])->name('Logout');
+    Route::post('/password/reset/link', [ResetPasswordController::class, 'getResetPasswordLink'])->name('getResetPasswordLink');
+    Route::get('/password/reset/{token}',[ResetPasswordController::class, 'showResetPasswordForm'])->name('showResetPasswordForm');
+    Route::post('/password/reset', [ResetPasswordController::class, 'resetPassword'])->name('resetPassword');
    });
 
     Route::middleware('auth')->group(function(){
     
        Route::get('/', function(){
         $user = User::with(['project','rateus','notifications'])->whereId(Auth::user()->id)->first();
-      //.  dd($user->notifications[0]->title);
         return Inertia('Portal/Client/Dashboard',[
             'rateUs' => $user->rateus->status,
             'progress'=> $user->project->progress,
@@ -39,9 +42,15 @@ Route::domain('portal.shawod.co.za')->group(function(){
         return redirect()->back()->with('RateUs','Thank you for rating us');
        })->name('RateUs');
 
-       Route::post('/updatePassword', [AuthController::class, 'updatePassword'])->name('updatePassword');
+       Route::post('/updatePassword', [ResetPasswordController::class, 'updatePassword'])->name('updatePassword');
        Route::post('/DeleteNotification', [NotificationController::class,'delete'])->name('DeleteNotification');
        Route::post('/cancellation', [CancellationController::class,'store'])->name('cancellation');
+
+       ///Admin Routes
+       Route::get('/', function(){
+        return Inertia('Portal/Admin/Dashboard');
+       })->name('AdminDashboard');
+
     });
 
 });

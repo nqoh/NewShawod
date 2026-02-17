@@ -5,63 +5,32 @@
         <div class="form-box">
           <div class="form-value">
             <img src="/assets/thumbnails/logoSb.png" alt="" width="50px" height="50px" style="display: block; margin: 0 auto 0px">
-            <form @submit.prevent="Login">
+            <form @submit.prevent="ResetPassword">
 
-              <h2 v-if="isResetPassword" >Portal Login</h2>
-              <h2 v-if="!isResetPassword" >Reset Password</h2>
-
-              <transition>
-                <p class="error" align="center"
-                 v-if="$page.props.LoginError"
-                ><b>Invalid Credentials</b></p>
-              </transition>
-
-              <transition>
-                <p class="success" align="center"
-                 v-if="$page.props.resetPassword"
-                >{{ $page.props.resetPassword }}</p>
-              </transition>
+              <h2>Enter New Password</h2>
               
               <div class="inputbox">
-                <ion-icon name="mail-outline"></ion-icon>
-                <input type="email" required v-model="form.email">
-                <label for="">Email</label>
-                <span v-if="form.errors.email" style="color: red; font-size: 1em">{{ form.errors.email }}</span>
-              </div>
-              <div class="inputbox" v-if="isResetPassword">
                 <ion-icon name="lock-closed-outline"></ion-icon>
                 <input type="password" required v-model="form.password">
                 <label for="">Password</label>
-              </div>
-              <div class="forget">
-                <label v-if="isResetPassword"><input type="checkbox" v-if="isResetPassword" v-model="form.remember">Remember Me</label>
-                <label v-if="!isResetPassword"></label>
-
-                <div @click="isResetPassword = !isResetPassword" style="cursor: pointer;">
-                  <span v-if="isResetPassword"> Forgot password? </span>
-                  <span v-else>Back to Login </span>
-                </div>
-
+                <span v-if="form.errors.password" style="color: red; font-size: 1em">{{ form.errors.password }}</span>
               </div>
 
-              <button type="submit"  :disabled="form.processing" v-if="isResetPassword">
-                <span v-if="form.processing">
-               <img src="/assets/images/loader.gif" width="25" />
-              </span>
-             <span v-else>
-               LOGIN
-             </span>
-              </button>
+              <div class="inputbox">
+                <ion-icon name="mail-outline"></ion-icon>
+                <input type="password" required v-model="form.password_confirmation">
+                <label for="">Confirm Password</label>
+              </div>
 
-              <button @click="resetPassword"  :disabled="form.processing" v-else>
+              <button type="submit"  :disabled="form.processing"  >
                 <span v-if="form.processing">
-               <img src="/assets/images/loader.gif" width="25" />
+                 <img src="/assets/images/loader.gif" width="25" />
               </span>
-             <span v-else>
-               Reset password
-             </span>
+               <span v-else>
+                 Reset password
+                </span>
               </button>
-
+              
             </form>
           </div>
         </div>
@@ -71,36 +40,19 @@
 
 <script setup lang="ts">
   defineOptions({ layout : ''})
-  import { useForm, usePage } from '@inertiajs/vue3';
-  import { ref, watch } from 'vue';
+  import { useForm } from '@inertiajs/vue3';
   import { route  } from 'ziggy-js';
+  const props = defineProps(['email','token'])
    
   const form  = useForm({
-        email: '',
+        email: props.email,
+        token: props.token,
         password: '',
-        remember:false,
+        password_confirmation:'',
   })
 
-  const Login = ()=>{
-    form.post(route('Login'), {
-       preserveScroll:true,
-    })
-  }
-
-  const page  = usePage();
-
-  watch(()=>page.props.LoginError, ()=>{
-     setTimeout(()=> page.props.LoginError = '', 3000);
-  })
-
-  watch(()=>page.props.resetPassword, ()=>{
-     setTimeout(()=> page.props.LoginError = '', 3000);
-  })
-
-  const isResetPassword = ref(true)
-
-  const resetPassword = ()=>{
-    form.post(route('getResetPasswordLink'), {
+  const ResetPassword = ()=>{
+    form.post(route('resetPassword'), {
        onSuccess(){
         form.clearErrors()
         form.reset()
@@ -129,15 +81,6 @@
     margin-top: 5px;
     border: 1px solid  white;
     background-color: red;
-    color: white;
-    border-radius: 5px;
-   }
-
-   .success{
-    padding: 5px;
-    margin-top: 5px;
-    border: 1px solid  white;
-    background-color: green;
     color: white;
     border-radius: 5px;
    }
