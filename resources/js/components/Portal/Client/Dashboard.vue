@@ -5,10 +5,10 @@
 	   <div class="col-lg-3 col-sm-6 mb-4 mb-lg-0" >
         <div class="card shadow text-center">
           <div class="position-relative rounded-top progress-wrapper" data-color="#fdb157" style="background-color: rgb(142, 253, 159); ">
-            <div class="wave" data-progress="50%" style="bottom: 50%;"></div>
+            <div class="wave" :data-progress="props.progress+'%'" :style="{bottom:props.progress+'%'}"></div>
           </div>
           <div class="card-footer bg-white">
-            <h4 class="card-title">Your Project (50%)</h4>
+            <h4 class="card-title">Your Project ({{ props.progress }}%)</h4>
           </div>
         </div>
       </div>
@@ -24,7 +24,7 @@
         <button class='btn-lg btn-primary' @click="$emit('update:modelValue', Payment)">Pay Now</button>
         </div>
       </div> 
-
+    
 	  <div class='form hidden' style="margin-left: 65%; " >
         <h3 class='heading' align="center">How do you feel about our customer service?</h3>
         <div  class='sliding-list'>
@@ -41,15 +41,21 @@
                 <li>Super Impressed!</li>
             </ul>
         </div>
-        <input class='slider' max='99' min='0' id="slider" style="margin: 0px auto" align="center" oninput='updateSlider(value)' type='range' value='80'>
+        <input class='slider' max='99' min='0'  id="slider" style="margin: 0px auto" align="center" v-model="form.rateUs" oninput='updateSlider(value)' type='range' :value='form.rateUs'>
     
-        <p  id="rateSuccess"  >Thank you for rating us</p>
+   
     <div class='form-group' id="ratebtn">
         <div class='col-md-offset-0'>
-            <button class='btn-lg btn-primary' id="btn_submit"  onclick="send_feedback()">Send feedback</button>
+            <button class='btn-lg btn-primary' id="btn_submit" :disabled="form.processing" 
+            @click="form.post(route('RateUs'))">
+              <span v-if="form.processing">Please wait...</span>
+              <span v-else>Send feedback</span>
+            </button>
         </div>
     </div>
-    
+    <Transition>
+      <h2 align="center" style="color: #33ccff;" v-if="$page.props.RateUs">Thank you for rating us</h2> 
+    </Transition>
 </div>
  <br>
 
@@ -63,12 +69,37 @@
 
 <script setup lang="ts">
   import { RateSmile } from '@/composables/RateSmile';
-  import { onMounted } from 'vue';
-   import Payment from './Payment.vue';
-  onMounted(()=>RateSmile())
+  import { onMounted, watch } from 'vue';
+  import Payment from './Payment.vue';
+  import { useForm , usePage} from '@inertiajs/vue3';
+  import { route } from 'ziggy-js';
+
+  const props = defineProps(['rateUs','progress'])
+  const form = useForm({rateUs : parseInt(props.rateUs)})
+  const page  = usePage();
+
+  watch(()=>page.props.RateUs , ()=>{
+       setTimeout(()=>{
+        page.props.RateUs = ''
+       }, 3000)
+  })
+
+  onMounted(()=>RateSmile().updateSlider(form.rateUs));
 </script>
 
 <style scoped>
+
+  .v-enter-from, .v-leave-to{
+    opacity: 0;
+   }
+  
+    .v-enter-active, .v-leave-active{
+      transition: 1.5s;
+    }
+
+   .v-enter-to, .v-leave-from {
+    opacity: 1 ;
+   }
 
 .block {
     margin-top: 10px;

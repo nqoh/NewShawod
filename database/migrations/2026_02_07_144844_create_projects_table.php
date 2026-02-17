@@ -19,7 +19,7 @@ return new class extends Migration
             $table->longText('features')->nullable();;
             $table->string('reference');
             $table->string('project_folder_id')->nullable();
-            $table->boolean('status')->default(0);
+            $table->boolean('progress')->default(0);
             $table->decimal('price',8,2);
             $table->integer('coupon_id')->nullable();
             $table->timestamps();

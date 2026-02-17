@@ -135,7 +135,7 @@ export const RateSmile = ()=>{
       return document.querySelector(".sliding-list ul").style.transform = `translateY(${-listIndex * 1.5}em)`;
     };
     render();
-    return updateSlider(80);
+    return { updateSlider };
 
 
   }

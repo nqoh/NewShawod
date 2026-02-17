@@ -54,4 +54,18 @@ class User extends Authenticatable
     {
         return $this->hasOne(Project::class);
     }
+
+    public function rateus()
+    {
+        return $this->hasOne(Rate::class);
+    }
+
+    public function notifications()
+    {
+        return $this->hasMany(Notification::class);
+    }
+
+    public function cancellation(){
+        return $this->hasOne(Cancellation::class);
+    }
 }

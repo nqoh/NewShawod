@@ -11,20 +11,20 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('cancelletions', function (Blueprint $table) {
+        Schema::create('cancellations', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->constrained('users')->cascadeOnDelete();
             $table->longText('reason');
+            $table->longText('special_instructions');
             $table->string('domain');
             $table->timestamps();
         });
     }
-
     /**
      * Reverse the migrations.
      */
     public function down(): void
     {
-        Schema::dropIfExists('cancelletions');
+        Schema::dropIfExists('cancellations');
     }
 };

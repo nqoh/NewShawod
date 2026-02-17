@@ -10,17 +10,17 @@
        <div class="block" style="float: right; margin-right: 5%;">
            <h1 align="center">Deposit Details</h1>
            <div style="margin-left: 5%;">
-            <h2 ><u>Capitec Bank</u></h2>
+            <h2 ><u>Capitec Bank</u> <img src="assets/images/capitec.png" width="35" /></h2>
             <p><b>Name: </b> NB NGOBESE</p> 
-            <p><b>Account Number: </b> 148362790</p> 
+            <p><b>Account Number: </b> 14 83 62790</p> 
             <p><b>Phone Number: </b> 063 014 2446</p> 
-            <p><b>Refference Number: </b> WEPD30</p> 
+            <p><b>Refrence Number: </b> {{ props.reference }}</p> 
             <hr>
-            <h2 ><u>Standard Bank</u></h2>
+            <h2 ><u>Standard Bank</u> <img src="assets/images/standardB.jpeg" width="25" /></h2>
             <p><b>Name: </b> NB NGOBESE</p> 
-            <p><b>Account Number: </b> 148362790</p> 
+            <p><b>Account Number: </b> 10 16 909 324 5</p> 
             <p><b>Phone Number: </b> 063 014 2446</p> 
-            <p><b>Refference Number: </b> WEPD30</p> 
+            <p><b>Reference Number: </b> {{ props.reference }}</p> 
           
            </div>
           
@@ -30,7 +30,7 @@
 </template>
 
 <script setup lang="ts">
-
+   const props = defineProps(['reference'])
 </script>
 
 <style scoped>
