@@ -21,7 +21,10 @@
 
     </div>
 
-    <CancellationForm v-else v-model="isCancellationForm" />
+    <div v-else>
+      <CancellationForm  v-model="isCancellationForm" />
+    </div>
+
 </template>
 
 <script setup lang="ts">

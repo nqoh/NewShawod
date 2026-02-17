@@ -6,7 +6,7 @@
           <Navbar />
    
           <KeepAlive >
-            <component :is="selectedComponent"  />
+            <component :is="selectedComponent" v-model="selectedComponent"  />
          </KeepAlive>
 
       </section>
