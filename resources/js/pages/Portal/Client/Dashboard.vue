@@ -4,9 +4,10 @@
       <section id="content" style="	background: var(--grey); min-height: 60rem;"  >
 
           <Navbar />
-   
+      
           <KeepAlive >
-            <component :is="selectedComponent" v-model="selectedComponent"  />
+            <component :is="selectedComponent" v-model="selectedComponent" 
+            :rateUs="rateUs" :progress="progress" :notifications="notifications" :reference="reference"  />
          </KeepAlive>
 
       </section>
@@ -21,7 +22,7 @@
   import Dashboard from '@/components/Portal/Client/Dashboard.vue';
   import { ClientDashboard } from '@/composables/ClientDashboard'
   import { onMounted , ref } from 'vue';
-
+  defineProps(['rateUs','progress','notifications','reference'])
   defineOptions({ layout : ''})
 
   onMounted(()=> ClientDashboard());

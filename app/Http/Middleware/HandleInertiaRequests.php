@@ -47,7 +47,10 @@ class HandleInertiaRequests extends Middleware
             'auth' => [
                 'user' => $request->user(),
             ],
+            'RateUs' => session('RateUs'),
+            'updatePassword'=> session('updatePassword'),
             'LoginError' => session('LoginError'),
+            'cancellation' => session('cancellation'),
             'sidebarOpen' => ! $request->hasCookie('sidebar_state') || $request->cookie('sidebar_state') === 'true',
              'ziggy' => [
                   ...(new Ziggy)->toArray(),

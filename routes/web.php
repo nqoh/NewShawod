@@ -2,7 +2,13 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\v1\AuthController;
-
+use App\Http\Controllers\v1\CancellationController;
+use App\Http\Controllers\v1\NotificationController;
+use App\Http\Resources\NotificationsResource;
+use App\Models\Rate;
+use App\Models\User;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 Route::inertia('login','auth/Login')->name('login');
 
@@ -15,7 +21,27 @@ Route::domain('portal.shawod.co.za')->group(function(){
    });
 
     Route::middleware('auth')->group(function(){
-       Route::inertia('/', 'Portal/Client/Dashboard')->name('ClientDashboard');
+    
+       Route::get('/', function(){
+        $user = User::with(['project','rateus','notifications'])->whereId(Auth::user()->id)->first();
+      //.  dd($user->notifications[0]->title);
+        return Inertia('Portal/Client/Dashboard',[
+            'rateUs' => $user->rateus->status,
+            'progress'=> $user->project->progress,
+            'reference' => $user->project->reference,
+            'notifications' => NotificationsResource::collection($user->notifications)
+            ]
+        );
+       })->name('ClientDashboard');
+
+        Route::post('/rateus', function(Request $request){
+        Rate::where('user_id',Auth::user()->id)->update(['status' => $request->rateUs]);
+        return redirect()->back()->with('RateUs','Thank you for rating us');
+       })->name('RateUs');
+
+       Route::post('/updatePassword', [AuthController::class, 'updatePassword'])->name('updatePassword');
+       Route::post('/DeleteNotification', [NotificationController::class,'delete'])->name('DeleteNotification');
+       Route::post('/cancellation', [CancellationController::class,'store'])->name('cancellation');
     });
 
 });

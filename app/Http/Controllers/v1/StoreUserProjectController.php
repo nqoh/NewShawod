@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreUserProjectRequest;
 use App\Mail\OrderConfirmationMail;
 use App\Models\Coupon;
+use App\Models\Rate;
 use App\Models\User;
 use Exception;
 use Illuminate\Support\Facades\DB;
@@ -40,11 +41,13 @@ class StoreUserProjectController extends Controller
                 'description' => $request->description,
                 'features' => $request->features,
                 'reference' => $reference,
-                'status' => 0,
+                'progress' => 0,
                 'price' => $request->price,
                 'coupon_id' => $request->coupon_id
             ]);
 
+            $user->rateus()->create(['status'=> 50]);
+            
             if($request->coupon_id){
                 $coupon = Coupon::whereId($request->coupon_id)->first();
                 Coupon::whereId($request->coupon_id)->update(['used' => $coupon->used += 1]);

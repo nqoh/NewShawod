@@ -46,15 +46,8 @@
                 <p>
                     Please enter domain for which you wish to cancel hosting.
                 </p>
-                <input type="text" class="txt" placeholder="Please enter domain name's" id="dmain">
-                <p style="color:red; margin-top: -10px; margin-left: 10px; margin-bottom: -10px" id="dmain_error"></p><br>
-<!-- 
-                <h3  align="center"><b><u>Last 4 Digits of Credit Card<span style="color: red">*</span></u></b></h3>
-                <p>
-                    For security purposes, please enter the last 4 digits of the credit card associated with your account.<br>
-                    <b>IMPORTANT NOTE:</b> Entering non-matching credit card information on this form will prevent it from being verified
-                    and processed.
-                </p> -->
+                <input type="text"  placeholder="Please enter domain name" v-model="form.domain">
+                <span v-if="form.errors.domain" style="color: red; font-size: 1em">{{ form.errors.domain }}</span><br>
               
                 <p style="color:red; margin-top: -10px; margin-left: 10px; margin-bottom: -10px" id="card_error"> </p><br>
                 <h3  align="center"><b><u>Reason for Cancellation<span style="color: red">*</span></u></b></h3>
@@ -62,34 +55,76 @@
                     If you have a moment, please let us know the reason why you are
                     cancelling hosting for your domain so we can improve our service for our current and future customers.
                 </p><br><br>
-                <textarea id="textareas" style="margin-left: 10px" placeholder="Reason for cancellation" class="cancellation input"></textarea>
-                <p style="color:red; margin-top: -10px; margin-left: 10px; margin-bottom: -10px" id="reason_error"> </p><br>
+                <textarea v-model="form.reason"  style="margin-left: 10px" placeholder="Reason for cancellation" class="input"></textarea>
+                <span v-if="form.errors.reason" style="color: red; font-size: 1em">{{ form.errors.reason }}</span><br>
                 <h3  align="center"><b><u>Special Instructions</u></b></h3>
                 <p>
                     If you have any special instructions related to this cancellation form or any other customer support questions,
                     please send us a message.
                 </p>
                 <br><br>
-                <textarea id="textareas" style="margin-left: 10px" placeholder="Special instruction" class="special input"></textarea>
-                <p style="color:red; margin-top: -10px; margin-left: 10px; margin-bottom: -10px" id="special_error"> </p><br>
+                <textarea  v-model="form.special_instruction" style="margin-left: 10px" placeholder="Special instruction" class="input"></textarea>
+                <span v-if="form.errors.special_instruction" style="color: red; font-size: 1em">{{ form.errors.special_instruction }}</span><br>
                
                 <div style="">
-                    <button type="submit" class="btn btn-primary btn-block btn-large" style="float: left; width: 45%;">Submit</button>
+                    <button @click="submit" class="btn btn-primary btn-block btn-large" style="float: left; width: 45%;">Submit</button>
                       <p style="width: 10%;"></p>
-                    <button type="submit" @click="$emit('update:modelValue', false)" class="btn btn-primary btn-block btn-large" style=" float: right; width: 45%;">Cancel</button>
+                    <button  @click="$emit('update:modelValue', false)" class="btn btn-primary btn-block btn-large" style=" float: right; width: 45%;">Cancel</button>
                 </div><br><br>
                 
-
+              <transition>
+                <h2 style="color: #33ccff" align="center"
+                 v-if="$page.props.cancellation"
+                ><b>{{ $page.props.cancellation }}</b></h2>
+              </transition>
+                   
                 <h4 ><b>Hosting plan cancellations are normally processed within 24-48 hours (Monday through Friday).</b></h4>
             </div>
     </div>
 </template>
 
 <script setup lang="ts">
+  import { useForm , usePage } from '@inertiajs/vue3';
+  import { watch } from 'vue';
+  import { route } from 'ziggy-js';
 
+  const form  = useForm({
+      domain:'',
+      reason:'',
+      special_instruction:''
+  });
+
+  const page = usePage();
+  
+  const submit = ()=>{
+     form.post(route('cancellation'),{
+        preserveScroll:true,
+        onSuccess(){
+            form.clearErrors()
+            form.reset()
+        }
+     })
+
+   watch(()=>page.props.cancellation, ()=>{
+      setTimeout(()=>{
+        page.props.cancellation = ''
+      }, 3000)
+   })  
+  }
 </script>
 
 <style scoped>
+.v-enter-from, .v-leave-to{
+    opacity: 0;
+   }
+  
+    .v-enter-active, .v-leave-active{
+      transition: 1.5s;
+    }
+
+   .v-enter-to, .v-leave-from {
+    opacity: 1 ;
+   }
 
 input , textarea { 
 	width: 100%; 

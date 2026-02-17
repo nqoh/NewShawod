@@ -1,38 +1,21 @@
-<template>
-    <div style="margin-left: 30%;">
+<template>  
+<div style="margin-left: 0%;">
 
-    <div class="block " v-if="true">
-         <h1 align="center"><u>Welcome</u></h1>
-        <p align="center" style="padding: 0%;">
-            <b style="color: grey; font-size: 12px;">11/12/2023</b>
+    <template  v-if="props.notifications!.data.length">
+        <div class="block " v-for="notification in notifications!.data" :key="notification.id" style="margin-left: 30%;">
+         <h1 align="center"><u>{{ notification.title }}</u></h1>
+         <p align="center" style="padding: 0%;">
+            <b style="color: grey; font-size: 12px;">{{ notification.created_at }}</b>
         </p>
 
-         <p style=" color: #585757;">
-           Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-            Id non dolore nostrum vero accusamus quo, omnis quasi reiciendis molestias,
-            ab nobis eveniet nisi dolor temporibus doloribus deserunt eius error itaque.
+         <p style=" color: #585757;" v-html="notification.description">
+         
          </p>
-         <img src="assets/images/bin.png" class="delete" />
-    </div>
+           <img src="assets/images/bin.png" @click="router.post(route('DeleteNotification'), { id :  parseInt(notification.id)})" class="delete" />
+          </div>
+       </template>
 
-
-    <div style="background: #fff;" class="block " v-if="true">
-         <h1 align="center"><u>Welcome</u></h1>
-        <p align="center" style="padding: 0%;">
-            <b style="color: grey; font-size: 12px;">11/12/2023</b>
-        </p>
-
-         <p style=" color: #585757;">
-           Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-            Id non dolore nostrum vero accusamus quo, omnis quasi reiciendis molestias,
-            ab nobis eveniet nisi dolor temporibus doloribus deserunt eius error itaque.
-         </p>
-         <img src="assets/images/bin.png"  class="delete" />
-    </div>
-    
-
-    
-    <div v-else style="margin-top: 20%;" align="center">
+    <div  v-else style="margin-top: 20%;" align="center">
         <h1>You have no new notification</h1>
     </div>
 
@@ -40,7 +23,14 @@
 </template>
 
 <script setup lang="ts">
+ import { router } from '@inertiajs/vue3';
+import { route } from 'ziggy-js';
 
+ const props = defineProps({
+    notifications:{
+        type:Object,
+    }
+ })
 
 </script>
 
