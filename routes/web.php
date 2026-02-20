@@ -5,16 +5,24 @@ use App\Http\Controllers\v1\auth\AuthController;
 use App\Http\Controllers\v1\auth\ResetPasswordController;
 use App\Http\Controllers\v1\CancellationController;
 use App\Http\Controllers\v1\NotificationController;
+use App\Http\Controllers\v1\PaymentController;
+use App\Http\Controllers\v1\ProjectController;
 use App\Http\Resources\NotificationsResource;
+use App\Http\Resources\PaymentResource;
+use App\Models\Coupon;
 use App\Models\Rate;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Inertia\Inertia;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Number;
 
 Route::inertia('login','auth/Login')->name('login');
-
+Route::get('/test', function(){
+  return view('emails.project_complete_thank_you');
+});
 Route::domain('portal.shawod.co.za')->group(function(){
+
     Route::middleware('guest')->group(function(){
     Route::inertia('/','auth/Login')->name('login');
     Route::post('/Login', [AuthController::class, 'Login'])->name('Login');
@@ -25,14 +33,14 @@ Route::domain('portal.shawod.co.za')->group(function(){
    });
 
     Route::middleware('auth')->group(function(){
-    
+
        Route::get('/', function(){
         $user = User::with(['project','rateus','notifications'])->whereId(Auth::user()->id)->first();
         return Inertia('Portal/Client/Dashboard',[
             'rateUs' => $user->rateus->status,
             'progress'=> $user->project->progress,
-            'reference' => $user->project->reference,
-            'notifications' => NotificationsResource::collection($user->notifications)
+            'project' => $user->project,
+            'notifications' => NotificationsResource::collection($user->notifications()->latest('id')->get())
             ]
         );
        })->name('ClientDashboard');
@@ -41,16 +49,33 @@ Route::domain('portal.shawod.co.za')->group(function(){
         Rate::where('user_id',Auth::user()->id)->update(['status' => $request->rateUs]);
         return redirect()->back()->with('RateUs','Thank you for rating us');
        })->name('RateUs');
-
+       
+       Route::post('/updateNotificationStatus', [NotificationController::class, 'updateNotificationsStatus'])->name('updateNotificationStatus');
        Route::post('/updatePassword', [ResetPasswordController::class, 'updatePassword'])->name('updatePassword');
        Route::post('/DeleteNotification', [NotificationController::class,'delete'])->name('DeleteNotification');
        Route::post('/cancellation', [CancellationController::class,'store'])->name('cancellation');
 
        ///Admin Routes
-       Route::get('/', function(){
-        return Inertia('Portal/Admin/Dashboard');
-       })->name('AdminDashboard');
+       Route::get('/admin', function(){
+        $users = User::with('project')->where('role_id',1)->get();
+        return Inertia('Portal/Admin/index',[
+            'users' => $users,
+        ]);
+       })->name('AdminDashboardIndex');
 
+       Route::get('/viewClient/{id}', function($id){
+        $user = User::with(['project','rateus','notifications','payment'])->whereId($id)->first();
+        return Inertia('Portal/Admin/Dashboard',[
+            'project' => $user->project,
+            'payment' => new PaymentResource($user->payment),
+            'coupon' => Coupon::whereId($user->project->coupon_id)->first(),
+        ]);
+       })->name('viewClient');
+
+       Route::post('/updateProgress',[ProjectController::class, 'updateProgess'])->name('updateProgess');
+       Route::post('/acceptClient', [ProjectController::class, 'acceptClient'])->name('acceptClient');
+       Route::post('/notification', [NotificationController::class, 'store'])->name('StoreNotification');
+       Route::post('/PaymentAlert', [PaymentController::class, 'SendPaymentAlert'])->name('PaymentAlert');
     });
 
 });

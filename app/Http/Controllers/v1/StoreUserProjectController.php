@@ -10,9 +10,8 @@ use App\Models\Rate;
 use App\Models\User;
 use Exception;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
-use Illuminate\Support\Str;
+
 
 class StoreUserProjectController extends Controller
 {
@@ -23,7 +22,6 @@ class StoreUserProjectController extends Controller
             
             DB::beginTransaction();
             
-            $password = Str::random(6);
 
             $user = User::create([
                  'role_id' => 1,  
@@ -31,7 +29,6 @@ class StoreUserProjectController extends Controller
                  'surname' => $request->surname,
                  'phone' => $request->phone,
                  'email' => $request->email,
-                 'password' => Hash::make($password)
             ]);
 
             $reference = $request->type == 'package' ? "WP".rand(10,99).date("s") : "WS".rand(10,99).date("s");
@@ -42,11 +39,11 @@ class StoreUserProjectController extends Controller
                 'features' => $request->features,
                 'reference' => $reference,
                 'progress' => 0,
-                'price' => $request->price,
                 'coupon_id' => $request->coupon_id
             ]);
 
             $user->rateus()->create(['status'=> 50]);
+            $user->payment()->create(['price' => $request->price,]);
             
             if($request->coupon_id){
                 $coupon = Coupon::whereId($request->coupon_id)->first();
@@ -61,8 +58,7 @@ class StoreUserProjectController extends Controller
             return response()->json([
                 'Status' => 'Successful',
                 'Message' => 'Your order was successful submitted ! check you email address',
-                'StatusCode' => 201,
-                'password' => $password
+                'StatusCode' => 201
            ]);
 
 

@@ -2,11 +2,11 @@
     <div style="padding-top: 20px; ">
         <div >
         <iframe :src="'/Projects/'+project.project_folder_id+'/index.php'" width="87%" style="margin-left: 85px" height="400px" ></iframe>
-        <div style="margin-left: 50px"><a style="margin-left: 50px; background-color: white; padding:5px" target = '_blank'
-			 :href="'/Projects/'+project.project_folder_id+'/index.php'">
+        <div style="margin-left: 50px">
+			<a style="margin-left: 50px; background-color: white; padding:5px" target = '_blank' 
+			:href="'/Projects/'+project.project_folder_id+'/index.php'">
             <img src="/assets/thumbnails/view.png"></a> </div>
         </div>
-
 <!-- 
         <div class="block" style="margin: 0px auto;">
 	<div class="block-header">
@@ -74,7 +74,7 @@
 </template>
 
 <script setup lang="ts">
-    defineProps(['project'])
+   defineProps(['project'])
 </script>
 
 <style scoped>

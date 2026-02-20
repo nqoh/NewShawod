@@ -12,7 +12,7 @@
 	    <link href="{{ asset('assets/css/main.css') }}" rel="stylesheet">
         <link href="{{ asset('assets/css/abow.css') }}" rel="stylesheet">
 	    <link href="{{ asset('assets/css/responsive.css') }}" rel="stylesheet">
-        <link href="{{ asset('assets/css/style.css') }}" rel="stylesheet">
+        <link href="{{ asset('assets/css/stylee.css') }}" rel="stylesheet">
 	    <link href="{{ asset('assets/css/style1.css') }}" rel="stylesheet">
         <link href="{{ asset('assets/css/ClientDashboard.css') }}" rel="stylesheet">
         <link rel="shortcut icon" href="{{ asset('assets/images/ico/favicon.ico') }}">
@@ -111,7 +111,7 @@
 <script type="text/javascript" src="{{ asset('assets/js/AddFeature.js') }}"></script>
 <script type="text/javascript" src="{{ asset('assets/js/popupItems.js') }}"></script>
 <script type="text/javascript" src="{{ asset('assets/js/datgui.js') }}"></script>
-<script type="text/javascript" src="{{ asset('assets/js/StoreUserProject.js') }}"></script>
+<script type="text/javascript" src="{{ asset('assets/js/StoreUsersProject.js') }}"></script>
 <script type="text/javascript" src="{{ asset('assets/js/coupon.js') }}"></script>
 
 <script type="text/javascript" src="{{ asset('assets/js/ClientDashboard.js') }}"></script>

@@ -68,7 +68,7 @@
                     <div class='col-md-6'>
                         <div class='form-group'>
                             <div class='col-md-11'>
-                                <input class='form-control' id='id_phone' onblur="phone('id_phone','phone_error')" placeholder='Phone: (xxx) - xxx xxxx' type='text'>
+                                <input class='form-control' id='id_phone' onblur="phone('id_phone','phone_error')" placeholder='Phone: (xxx) - xxx xxxx' type='tel' pattern="[0-9]{10}" maxlength="14">
                             </div>
                             <span style="color: red; margin-left: 22%" id="phone_error"></span>
                         </div>

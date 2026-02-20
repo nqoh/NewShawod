@@ -24,7 +24,7 @@ class StoreUserProjectRequest extends FormRequest
         return [
             'name' => ['required','min:3','string'],
             'surname' => ['required','min:3','string'],
-            'phone' => ['required','min:10','string'],
+            'phone' => ['required','min:14','string'],
             'email' => ['required','email','unique:users,email'],
             'package' => ['required','min:3','string'],
             'description' => ['required','min:30','string'],

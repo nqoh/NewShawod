@@ -79,35 +79,26 @@ function email(e,r) {
 }
 
 function phone(c,error){
-    if(_(c).value.trim() != ""){
-        if(_(c).value.trim().length == 10){
-            var contact = _(c).value.split('');
-            for(var i=0; i < contact.length ; i++) {
-                    if(contact[i] =='0' || contact[i] =='1' ||contact[i] =='2' || contact[i] =='3' || contact[i] =='4' || contact[i] =='5'||
-                        contact[i] =='6' || contact[i] =='7' || contact[i] =='8' || contact[i] =='9'){
-                        _(error).innerHTML="";
-                        _(c).style.border="none";
-                    }else{
-                        _(error).innerHTML="Invalid contact number";
-                        _(c).style.border="1px solid red";
-                        _(c).focus()
-                        _(c).value=""
-                        break
-                        return false
-                    }
-            }
-        }else{
-            _(error).innerHTML="Enter 10 digit of phone number";
-            _(c).style.border="1px solid red";
-            _(c).focus();
-            _(c).value=""
-        }
-    }else{
-        _(error).innerHTML = "Enter phone number";
-        _(c).style.border="1px solid red";
-        _(c).focus()
-        _(c).value=""
-}
+   const input =  _(c).value.replace(/\D/g,'');
+   const size =  input.length;
+  if(size === 0){
+    _(c).value = input;
+  }else if(size < 4){
+    _(c).value = `(${input})`;
+  }else if( size < 7){
+    _(c).value = `(${input.slice(0,3)}) ${input.slice(3)}`;
+  }else{
+    _(c).value = `(${input.slice(0,3)}) ${input.slice(3,6)}-${input.slice(6,10)}`;
+  }
+  if(_(c).value.length < 14){
+    _(error).innerHTML="Enter 10 digit of phone number";
+    _(c).style.border="1px solid red";
+    _(c).focus();
+    _(c).value=""
+  }else{
+    _(error).innerHTML="";
+    _(c).style.border="none";
+  }
 }
 
 function website(vl,rx) {
@@ -150,12 +141,6 @@ var d = localStorage.discounts;
     if(_(email).value === ""){
         _(email).style.border="1px solid red"
         _('email_error').innerHTML = "Enter email address"
-        return false
-    }
-
-    if(_(contact).value.length !== 10){
-        _(contact).style.border="1px solid red"
-         _('phone_error').innerHTML = "Enter phone number"
         return false
     }
 
