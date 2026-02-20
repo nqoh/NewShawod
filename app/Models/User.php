@@ -68,4 +68,9 @@ class User extends Authenticatable
     public function cancellation(){
         return $this->hasOne(Cancellation::class);
     }
+
+    public function payment()
+    {
+        return $this->hasOne(Payment::class);
+    }
 }

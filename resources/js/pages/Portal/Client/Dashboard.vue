@@ -1,13 +1,13 @@
 <template>
     <div style="	background: var(--grey); ">
-      <Sidbar :selectedComponent="selectedComponent"  v-model="selectedComponent" />
+      <Sidbar :selectedComponent="selectedComponent"  v-model="selectedComponent" :notifications="notifications" />
       <section id="content" style="	background: var(--grey); min-height: 60rem;"  >
 
           <Navbar />
       
           <KeepAlive >
             <component :is="selectedComponent" v-model="selectedComponent" 
-            :rateUs="rateUs" :progress="progress" :notifications="notifications" :reference="reference"  />
+            :rateUs="rateUs" :progress="progress" :notifications="notifications" :project="project"  />
          </KeepAlive>
 
       </section>
@@ -21,13 +21,13 @@
   import Navbar from '@/components/Portal/Client/Navbar.vue';
   import Dashboard from '@/components/Portal/Client/Dashboard.vue';
   import { ClientDashboard } from '@/composables/ClientDashboard'
-  import { onMounted , ref } from 'vue';
-  defineProps(['rateUs','progress','notifications','reference'])
+  import { onMounted , shallowRef } from 'vue';
+  defineProps(['rateUs','progress','notifications','project'])
   defineOptions({ layout : ''})
 
   onMounted(()=> ClientDashboard());
 
-  const selectedComponent = ref(Dashboard);
+  const selectedComponent = shallowRef(Dashboard);
  
 </script>
 

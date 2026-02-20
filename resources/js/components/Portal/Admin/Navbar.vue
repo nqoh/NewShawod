@@ -6,7 +6,7 @@
 
     <form action="#" >
       <a href="#" class="brand">
-			<span class="text">CLIENT PORTAL</span>
+			<span class="text">ADMIN PORTAL</span>
 		</a>
     </form>
    
@@ -21,7 +21,7 @@
 
     <!-- Profile Menu -->
      <a href="#" class="profile" id="profileIcon">
-        <img src="assets/thumbnails/favw.png" alt="Profile">
+        <img src="/assets/thumbnails/favw.png" alt="Profile">
     </a>
    
 </nav>

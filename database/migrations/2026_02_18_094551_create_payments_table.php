@@ -11,16 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('projects', function (Blueprint $table) {
+        Schema::create('payments', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->constrained('users')->cascadeOnDelete();
-            $table->string('package');
-            $table->longText('description');
-            $table->longText('features')->nullable();;
-            $table->string('reference');
-            $table->string('project_folder_id')->nullable();
-            $table->boolean('progress')->default(0);
-            $table->integer('coupon_id')->nullable();
+            $table->integer('paid_percentage')->default(0);
+            $table->decimal('price',8,2);
             $table->timestamps();
         });
     }
@@ -30,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('projects');
+        Schema::dropIfExists('payments');
     }
 };

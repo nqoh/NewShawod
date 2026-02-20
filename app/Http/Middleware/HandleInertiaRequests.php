@@ -50,7 +50,9 @@ class HandleInertiaRequests extends Middleware
             'RateUs' => session('RateUs'),
             'updatePassword'=> session('updatePassword'),
             'resetPassword' => session('resetPassword'),
-
+            'ProgressUpdate' => session('ProgressUpdate'),
+            'welcome' => session('welcome'),
+            'StoreNotification' => session('StoreNotification'),
             'LoginError' => session('LoginError'),
             'cancellation' => session('cancellation'),
             'sidebarOpen' => ! $request->hasCookie('sidebar_state') || $request->cookie('sidebar_state') === 'true',

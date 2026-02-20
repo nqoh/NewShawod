@@ -15,9 +15,9 @@
 
      <div style="float: left; margin-left:  5%; width: 300px; margin-top: -30px;" >
         <h1 align="center"><u>Retainer</u></h1>
-        <p>To secure your place and start developing your website we need 50% deposit</p>
+        <p>To secure your place and start developing your website we need 50% upfornt deposit</p>
         <!-- <p>To continue with your webiste development you need to pay 25% second schedule </p> -->
-        <!-- <p>To continue with your webiste development you need to pay 25% final for launch. </p> -->
+        <!-- <p>To continue with your webiste development you need to pay 50% final for launch. </p> -->
         <!-- <p>You don't have any Outstanding Payments for now </p> -->
        <br>
         <div class='col-md-offset-0' style="margin-left:  0%;">
@@ -60,7 +60,7 @@
  <br>
 
 	<div style="margin: 0px auto;"  align="center">
-		<img src="assets/thumbnails/why us blue.png" />
+		<img src="/assets/thumbnails/why us blue.png" />
 	</div>
 
 	</main>

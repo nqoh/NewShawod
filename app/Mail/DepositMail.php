@@ -9,24 +9,25 @@ use Illuminate\Mail\Mailables\Content;
 use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Queue\SerializesModels;
 
-class ResetPasswordMAil extends Mailable implements ShouldQueue
+class DepositMail extends Mailable implements ShouldQueue
 {
     use Queueable, SerializesModels;
 
     /**
      * Create a new message instance.
      */
-    public function __construct(public $token, public $email, public $name)
+    public function __construct(public $name, public $reference, public $package, public $halfPrice , public $totalPrice)
     {
         //
     }
+
     /**
      * Get the message envelope.
      */
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: 'Shawod Reset Your Password',
+            subject: 'Shawod Initial Deposit',
         );
     }
 
@@ -36,10 +37,7 @@ class ResetPasswordMAil extends Mailable implements ShouldQueue
     public function content(): Content
     {
         return new Content(
-            view: 'emails.password_reset',
-            with:[
-                'resetUrl' => "https://portal.shawod.co.za/password/reset/{$this->token}?email=" . urldecode($this->email)
-            ]
+            view: 'emails.deposit',
         );
     }
 
