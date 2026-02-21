@@ -10,6 +10,7 @@ use App\Http\Controllers\v1\PaymentController;
 use App\Http\Controllers\v1\ProjectController;
 use App\Http\Resources\NotificationsResource;
 use App\Http\Resources\PaymentResource;
+use App\Models\Contact;
 use App\Models\Coupon;
 use App\Models\Rate;
 use App\Models\User;
@@ -20,7 +21,7 @@ use Illuminate\Support\Number;
 
 Route::inertia('login','auth/Login')->name('login');
 Route::get('/test', function(){
-  return view('emails.project_complete_thank_you');
+  return Contact::get();
 });
 Route::domain('portal.shawod.co.za')->group(function(){
 
@@ -68,6 +69,7 @@ Route::domain('portal.shawod.co.za')->group(function(){
         $user = User::with(['project','rateus','notifications','payment'])->whereId($id)->first();
         return Inertia('Portal/Admin/Dashboard',[
             'project' => $user->project,
+            'emails' => Contact::get(),
             'payment' => new PaymentResource($user->payment),
             'coupon' => Coupon::whereId($user->project->coupon_id)->first(),
         ]);
@@ -77,6 +79,7 @@ Route::domain('portal.shawod.co.za')->group(function(){
        Route::post('/acceptClient', [ProjectController::class, 'acceptClient'])->name('acceptClient');
        Route::post('/notification', [NotificationController::class, 'store'])->name('StoreNotification');
        Route::post('/PaymentAlert', [PaymentController::class, 'SendPaymentAlert'])->name('PaymentAlert');
+       Route::post('/DeleteEmail',  [ContactusController::class, 'delete'])->name('DeleteEmail');
     });
 
 });

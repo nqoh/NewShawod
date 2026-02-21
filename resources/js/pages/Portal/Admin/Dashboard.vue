@@ -6,13 +6,12 @@
           <Navbar />
           <KeepAlive >
             <component :is="selectedComponent" v-model="selectedComponent" 
-            :project="project" :payment="payment" :coupon="coupon"  />
+            :project="project" :payment="payment" :coupon="coupon" :emails="emails"  />
           </KeepAlive>
-
       </section>
 
     </div>
-   
+ 
 </template>
 
 <script setup lang="ts">
@@ -21,7 +20,7 @@
   import Dashboard from '@/components/Portal/Admin/Dashboard.vue';
   import { ClientDashboard } from '@/composables/ClientDashboard'
   import { onMounted , shallowRef } from 'vue';
-  defineProps(['project','payment','coupon'])
+  defineProps(['project','payment','coupon','emails'])
   defineOptions({ layout : ''})
   onMounted(()=> ClientDashboard());
 

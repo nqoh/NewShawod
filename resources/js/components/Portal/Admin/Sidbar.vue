@@ -12,26 +12,32 @@
 					<i class='bx bxs-dashboard bx-sm' ></i>
 					<span class="text" >Dashboard</span>
 				</a>
-			</li><br>
+			</li>
 			<li>
 				<a href="#" @click="$emit('update:modelValue',Project)">
 					<i class='bx bxs-shopping-bag-alt bx-sm' ></i>
 					<span class="text" >Project</span>
 				</a>
-			</li><br>
+			</li>
 
 			<li>
 				<a href="#"  @click="$emit('update:modelValue',Notification)">
 					<i class='bx bxs-message-dots bx-sm' ></i>
 					<span class="text">Notification</span>
 				</a>
-			</li><br>
+			</li>
 			<li>
 				<a href="#"  @click="$emit('update:modelValue',Payment)">
 					<i class='bx bxs-group bx-sm' ></i>
 					<span class="text">Payment</span>
 				</a>
-			</li><br>
+			</li>
+			<li>
+				<a href="#"  @click="$emit('update:modelValue',Emails)">
+					<i class='bx bxs-group bx-sm' ></i>
+					<span class="text">Emails</span>
+				</a>
+			</li>
 			<li>
 				<a href="#"  @click="$emit('update:modelValue',Settings)">
 					<i class='bx bxs-cog bx-sm bx-spin-hover' ></i>
@@ -65,6 +71,7 @@
   import Notification from './Notification.vue';
   import Payment from './Payment.vue';
   import Settings from './Settings.vue';
+  import Emails from './Emails.vue';
   import { route } from 'ziggy-js';
   import { Link, router } from '@inertiajs/vue3';
 

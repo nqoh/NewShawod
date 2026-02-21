@@ -17,7 +17,7 @@
     </div>
 
     <div class="form-group">
-     <input type="email" v-model="form.email" class="form-control" required placeholder="Email Id">
+     <input type="email" v-model="form.email" class="form-control" required placeholder="Email Address">
      <span v-if="form.errors.email" style="color: red; font-size: 1em">{{ form.errors.email }}</span> 
    </div>
 
