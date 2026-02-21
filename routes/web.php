@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\v1\auth\AuthController;
 use App\Http\Controllers\v1\auth\ResetPasswordController;
 use App\Http\Controllers\v1\CancellationController;
+use App\Http\Controllers\v1\ContactusController;
 use App\Http\Controllers\v1\NotificationController;
 use App\Http\Controllers\v1\PaymentController;
 use App\Http\Controllers\v1\ProjectController;
@@ -89,6 +90,7 @@ Route::middleware('guest')->group(function(){
     Route::inertia('/portfolio','Portfolio')->name('portfolio');
     Route::inertia('/aboutus','Aboutus')->name('aboutus');
     Route::inertia('/contactus','Contact')->name('contactus');
+    Route::post('/contact',[ContactusController::class,'store'])->name('contact');
     Route::inertia('/howitwork','HowItWork')->name('howitworks');
     Route::inertia('/createawebsite','HowToCreateWebsite')->name('createawebsite'); 
     Route::inertia('/seo','Seo')->name('seo');
@@ -96,7 +98,6 @@ Route::middleware('guest')->group(function(){
     Route::inertia('/domain','Domain')->name('domain');
     Route::inertia('/getpackage','GetPackage')->name('getpackage');
     Route::inertia('/getwebsite','GetWebsite')->name('getwebsite');
-    Route::inertia('/portal/login','Portal/Auth/Login')->name('portal');
     Route::inertia('/blog','Blog')->name('blog');
     Route::inertia('/blog1','Blog1')->name('blog1');
     Route::inertia('/blog2','Blog2')->name('blog2');

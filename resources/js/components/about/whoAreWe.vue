@@ -7,7 +7,7 @@
                         <h2 class="bold">Who we are</h2>
                         <div class="row">
                             <div class="col-sm-5">
-                                <img src="assets/images/aboutus/4.png" class="img-responsive" alt="">
+                                <img src="/assets/images/aboutus/4.png" class="img-responsive" alt="">
                             </div>
                             <div class="col-sm-7">
                                 <h3 class="top-zero">Brief history</h3>

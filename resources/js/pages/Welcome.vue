@@ -5,7 +5,7 @@
           <div class="row">
             <div class="main-slider ">
               <div class="slide-text">
-                 <h1>Let's make your Online Brand Ambassador!</h1>
+                 <h1>Let’s make your brand an online ambassador!</h1>
                   <p><b>Web Surfers Take 5 Seconds!</b> To form an impression and find value on a website, Turn your traffic into Prospects with Shawod IT Solution.</p>
                 <div class="wraps"> <Link class="btn-6" :href="route('websites')">GET STARTED<span></span></Link></div>
                </div>
@@ -165,10 +165,10 @@
             <div class="col-lg-4 col-md-6 single-service">
                 <div class="inner">
                     <div class="title">
-                      <Link :href="route('portal')">  <div class="icon">
+                      <a href="https://portal.shawod.co.za" target="_blank">  <div class="icon">
                             <i class="fa fa-laptop"></i>
                         </div>
-                        <h4>Client portal</h4></Link>
+                        <h4>Client portal</h4></a>
                     </div>
                     <div class="content">
                         <p>We have designed a portal for clients to view their project real-time, this is the first of its kind in the Industry.</p>

@@ -35,7 +35,7 @@
         <tr>
             <td class="header">
                 <h1> <b>THANK YOU FOR YOUR ORDER!</b> </h1>
-                <span align="center" style="color: rgb(73,197,239);">LET`S MAKE YOUR ONLINE BRAND AMBASSADOR!</span>
+                <span align="center" style="color: rgb(73,197,239);">LET`S MAKE YOUR BRAND AN ONLINE AMBASSADOR!</span>
                 <svg class="waves" xmlns="http://www.w3.org/2000/svg" style="margin-top: -30px" xmlns:xlink="http://www.w3.org/1999/xlink"
                viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
                <defs>

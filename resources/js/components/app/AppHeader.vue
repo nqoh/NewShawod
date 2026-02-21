@@ -12,7 +12,7 @@
           </div>
             <div class="collapse navbar-collapse">
                <ul class="nav navbar-nav navbar-right">
-                   <li><Link :href="route('home')" class="bttn bttn-2">Home</Link></li>
+                   <li><Link :href="route('home')"      class="bttn bttn-2">Home</Link></li>
                    <li><Link :href="route('websites')"  class="bttn bttn-2">Websites</Link></li>
                    <li><Link :href="route('packages')"  class="bttn bttn-2">Packages</Link></li>
                    <li><Link :href="route('portfolio')" class="bttn bttn-2">Portfolio</Link></li>

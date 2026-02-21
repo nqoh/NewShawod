@@ -138,7 +138,4 @@
             });
         $('[href=#]').click(function(){return false});
     });
-
-
-    
 </script>

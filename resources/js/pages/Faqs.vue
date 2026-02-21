@@ -108,7 +108,7 @@ Also refer to <Link :href="route('howitworks')"> how it works </Link> for more c
     <input class="ac-input" id="ac-10" name="accordion-1" type="checkbox" />
     <label class="ac-label" for="ac-10">Can I edit the Content on my website after you done?<i></i></label>
     <div class="article ac-content">
-      <p>Yes, you sure can. When selecting features for your website make sure you select Content Management System (CMS), such platform removes the need for businesses to constantly contact web developers when changes are required. This means no additional web development charges as well as no waiting times for changes to be implemented. Changes to the website can be completed instantly and easily by internal staff when required let us know on our <Link :href="route('portal')"> Client Portal </Link>.</p>
+      <p>Yes, you sure can. When selecting features for your website make sure you select Content Management System (CMS), such platform removes the need for businesses to constantly contact web developers when changes are required. This means no additional web development charges as well as no waiting times for changes to be implemented. Changes to the website can be completed instantly and easily by internal staff when required let us know on our <a href="https://portal.shawod.co.za" target="_blank"> Client Portal </a>.</p>
       
     </div>
   </div>

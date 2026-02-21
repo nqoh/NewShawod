@@ -10,7 +10,7 @@
                          
                         <h2>Initially you</h2><br>
                         <p> <b>Step 1 :</b> You select website/package or service, specify requirements.<br><br>
-                        <b>Step 2 :</b> After approval, We send you our<Link :href="route('portal')"> Clients Portal </Link> link and Login credentials.<br><br>
+                        <b>Step 2 :</b> After approval, We send you our<a href="https://portal.shawod.co.za" target="_blank"> Clients Portal </a> link and Login credentials.<br><br>
                         <b>Step 3 :</b> 50% of the estimated fee must be provided prior to beginning work.<br><br>From there we can either communicate on the Portal or via email, preferably via our Clients Portal so you can also see you Project in-progress </p> <br>
                        
 
