@@ -79,6 +79,13 @@
  </section>
  <WhatsApp />
 
+
+      <Head>
+        
+         <title>S E O | </title>
+
+      </Head>
+
 </template>
 
 <script setup lang="ts">

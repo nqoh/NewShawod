@@ -118,6 +118,47 @@
         </div>
      </section>
      <WhatsApp />
+
+     <Head>
+        <meta name="title" content="Terms &amp; Conditions">
+        
+        <meta name="robots" content="index/follow">
+
+        <meta name="description" content="Obviously we have terms, these terms and conditions govern your use of this website; by using this website, you accept these terms and conditions in full.">
+
+        <meta name="keywords" content="Durban website design, website packages, africa website, ghana website, web development, south africa web company, domain, hosting, gauteng, mpumalanga, cape town">
+       
+        <meta property="og:title" content="Website development | Shawod">
+
+        <meta property="og:description" content="Obviously we have terms, these terms and conditions govern your use of this website; by using this website, you accept these terms and conditions in full.">
+
+         <meta property="og:image" content="https://shawod.com/public/assets/thumbnails/shawodTro.jpg">
+
+         <meta property="og:url" content="https://shawod.com/terms">
+
+         <meta property="og:type" content="website">
+
+         <meta  property='og:site_name' 
+               content="Shawod" />
+
+        <meta property="og:image" content="https://shawod.com/public/assets/thumbnails/shawodTro.jpg">
+
+         <!--- Twitter Card --->
+
+         <meta property="twitter:card" content="summary_large_image">
+
+         <meta property="twitter:url" content="https://shawod.com/terms">
+
+         <meta property="twitter:title" content="Website development | Shawod">
+
+         <meta property="twitter:description" content="Obviously we have terms, these terms and conditions govern your use of this website; by using this website, you accept these terms and conditions in full.">
+
+         <meta property="twitter:image" content="http://shawod.com/public/assets/thumbnails/shawodTro.jpg">
+
+         <title>Terms &amp; Conditions | </title>
+
+      </Head>
+
 </template>
 
 <script setup lang="ts">

@@ -60,6 +60,18 @@
 
 </div>
 <WhatsApp />
+
+
+<Head>
+        
+        <meta name="title" content="Configure package">
+
+        <meta name="keywords" content="Durban website design, website packages, africa website, ghana website, web development, south africa web company, domain, hosting, gauteng, mpumalanga, cape town">
+       
+         <title>Configure package | </title>
+
+      </Head>
+
  </template>
  
  <script setup lang="ts">

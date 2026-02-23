@@ -56,6 +56,47 @@
         </div>
      </section>
      <WhatsApp />
+
+     <Head>
+        <meta name="title" content="Privacy policy">
+        
+        <meta name="robots" content="index/follow">
+
+        <meta name="description" content="Learn about the personal information that Shawod collects, and the ways in which Shawod uses that personal information.">
+
+        <meta name="keywords" content="Durban website design, website packages, africa website, ghana website, web development, south africa web company, domain, hosting, gauteng, mpumalanga, cape town">
+       
+        <meta property="og:title" content="Privacy policy | Shawod">
+
+        <meta property="og:description" content="about the personal information that Shawod collects, and the ways in which Shawod uses that personal information.">
+
+         <meta property="og:image" content="https://shawod.com/public/assets/thumbnails/shawodTro.jpg">
+
+         <meta property="og:url" content="https://shawod.com/privacy">
+
+         <meta property="og:type" content="website">
+
+         <meta  property='og:site_name' 
+               content="Shawod" />
+
+        <meta property="og:image" content="https://shawod.com/public/assets/thumbnails/shawodTro.jpg">
+
+         <!--- Twitter Card --->
+
+         <meta property="twitter:card" content="summary_large_image">
+
+         <meta property="twitter:url" content="https://shawod.com/privacy">
+
+         <meta property="twitter:title" content="Privacy policy | Shawod">
+
+         <meta property="twitter:description" content="about the personal information that Shawod collects, and the ways in which Shawod uses that personal information.">
+
+         <meta property="twitter:image" content="http://shawod.com/public/assets/thumbnails/shawodTro.jpg">
+
+         <title>Privacy policy | </title>
+
+      </Head>
+
 </template>
 
 <script setup lang="ts">

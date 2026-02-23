@@ -75,7 +75,7 @@
                     <tr class="item-row">
                         <td style="padding: 10px 0;"><b>Login link:</b></td>
                         <td style="padding: 10px 0; text-align: right;">
-                            <a href="https://portal.shawod.co.za">https://portal.shawod.co.za</a></span>
+                            <a href="https://portal.shawod.com">https://portal.shawod.com</a></span>
                         </td>
                     </tr>
 
@@ -98,7 +98,7 @@
                 </table><br>
 
                 <div align="center">
-                    <a href="https://portal.shawod.co.za" class="button" style="color:#fffff">Login</a>
+                    <a href="https://portal.shawod.com" class="button" style="color:#fffff">Login</a>
                  </div>
 
                 <h3>Thank you</h3>
@@ -107,8 +107,8 @@
         </tr>
         <tr>
             <td class="footer">
-                <p>Questions? Contact our support team at support@shawod.co.za </p>
-                <a href='https://shawod.co.za' target="_blank">www.shawod.co.za</a>
+                <p>Questions? Contact our support team at support@shawod.com </p>
+                <a href='https://shawod.com' target="_blank">www.shawod.com</a>
                 <p>
                     <a href="https://www.facebook.com/shawodza">
                         <img src="{{ $message->embed(public_path('assets/thumbnails/fblg.png')) }}" width="30px" style=" margin-left: 15%;

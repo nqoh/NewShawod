@@ -60,7 +60,7 @@
            </div>
         <div class="project-info overflow">
            <h3>Our Client:</h3>
-            <p>FreeCardGift enables users to write messages on an animated card,well known as a Gif (Graphics Interchange Format). Onther one of our happy clients who had this to say about us;</p>
+            <p>FreeCardGift enables users to write messages on an animated card,well known as a Gif (Graphics Interchange Format). Onather one of our happy clients who had this to say about us;</p>
             <p> <i> <b>"Working with this developer was smooth from start to finish. The website looks clean, loads fast, and works perfectly on mobile. Highly recommended!"</b></i></p>         
         </div>
       <div class="skills overflow">
@@ -105,7 +105,7 @@
            </div>
         <div class="project-info overflow">
            <h3>Our Client:</h3>
-            <p>NewFreeSongs is Music Plattform where users can download music , read news, watch music videos, comments and more. Onther one of our happy clients who had this to say about us;</p>
+            <p>NewFreeSongs is Music Plattform where users can download music , read news, watch music videos, comments and more. Onather one of our happy clients who had this to say about us;</p>
             <p> <i> <b>"Great attention to detail. Everything was done on time and exactly as requested. I’ll definitely be coming back for future projects!"</b></i></p>         
         </div>
       <div class="skills overflow">
@@ -138,3 +138,6 @@
         <br>
      </div>
 </template>    
+<script setup lang="ts">  
+import { route } from 'ziggy-js'
+</script>

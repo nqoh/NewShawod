@@ -247,6 +247,49 @@
      </section>
      <WhatsApp />
     </div>
+
+    <Head>
+        <meta name="title" content="Shawod IT Solution">
+
+        <meta name="robots" content="index/follow">
+        
+        <meta name="description" content="Owning a website has never been this easy, get a stunning website now at Shawod. Also, we offer Hosting, SEO, Softwares' and more...">
+        
+        <meta name="keywords" content="Durban website design, web development, south africa web company, domain, hosting, gauteng, mpumalanga, cape town">
+         <!--- Open Graph --->
+         <meta property="og:title" content="Shawod IT Solution">
+
+         <meta property="og:description" content="Owning a website has never been this easy, get a stunning website now at Shawod. Also, we offer Hosting, SEO, Softwares' and more...">
+
+         <meta property="og:image" content="https://shawod.com/public/assets/thumbnails/shawodTro.jpg">
+
+         <meta  property='og:url' 
+                content="https://shawod.com" />
+
+         <meta  property='og:type' 
+                content="website" />
+
+         <meta  property='og:site_name' 
+               content="Shawod" />
+
+        <meta property="og:image" content="https://shawod.com/public/assets/thumbnails/shawodTro.jpg">
+
+         <!--- Twitter Card --->
+
+         <meta property="twitter:card" content="summary_large_image">
+
+         <meta property="twitter:url" content="https://shawod.com">
+
+         <meta property="twitter:title" content="Shawod IT Solution">
+
+         <meta property="twitter:description" content="Owning a website has never been this easy, get a stunning website now at Shawod. Also, we offer Hosting, SEO, Softwares' and more...">
+
+         <meta property="twitter:image" content="http://shawod.com/public/assets/thumbnails/shawodTro.jpg">
+
+         <title>Home | </title>
+
+      </Head>
+
 </template>
 
 <script setup lang="ts">

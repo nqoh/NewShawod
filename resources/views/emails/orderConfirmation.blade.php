@@ -58,7 +58,7 @@
 
                   This email contains important information regarding your recent <b>Shawod</b> order.<br>
                   Please save it for reference, if you would like to cancel the status of your order or make any
-                  changes to it, please email support@shawod.co.za along with your reference.
+                  changes to it, please email support@shawod.com along with your reference.
 
                   </p>
         
@@ -95,8 +95,8 @@
         </tr>
         <tr>
             <td class="footer">
-                <p>Questions? Contact our support team at support@shawod.co.za </p>
-                <a href='https://shawod.co.za' target="_blank">www.shawod.co.za</a>
+                <p>Questions? Contact our support team at support@shawod.com </p>
+                <a href='https://shawod.com' target="_blank">www.shawod.com</a>
                 <p>
                     <a href="https://www.facebook.com/shawodza">
                         <img src="{{ $message->embed(public_path('assets/thumbnails/fblg.png')) }}" width="30px" style=" margin-left: 15%;

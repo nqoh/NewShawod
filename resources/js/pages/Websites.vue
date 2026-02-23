@@ -33,6 +33,47 @@
  <WhatsApp />
 </div>
 
+<Head>
+        <meta name="title" content="Website development">
+        
+        <meta name="robots" content="index/follow">
+
+        <meta name="description" content="Website development, customize yours now. Let's develop your Online Brand Ambassador.">
+
+        <meta name="keywords" content="Durban website design, website packages, africa website, ghana website, web development, south africa web company, domain, hosting, gauteng, mpumalanga, cape town">
+         <!--- Open Graph --->
+         <meta property="og:title" content="Website development | Shawod">
+
+         <meta property="og:description" content="Website development, customize yours now. Let's develop your Online Brand Ambassador.">
+
+         <meta property="og:image" content="https://shawod.com/public/assets/thumbnails/shawodTro.jpg">
+
+         <meta property="og:url" content="https://shawod.com/website">
+
+         <meta property="og:type" content="website">
+
+         <meta  property='og:site_name' 
+               content="Shawod" />
+
+        <meta property="og:image" content="https://shawod.com/public/assets/thumbnails/shawodTro.jpg">
+
+         <!--- Twitter Card --->
+
+         <meta property="twitter:card" content="summary_large_image">
+
+         <meta property="twitter:url" content="https://shawod.com">
+
+         <meta property="twitter:title" content="Website development | Shawod">
+
+         <meta property="twitter:description" content="Website development, customize yours now. Let's develop your Online Brand Ambassador.">
+
+         <meta property="twitter:image" content="http://shawod.com/public/assets/thumbnails/shawodTro.jpg">
+
+         <title>Website development | </title>
+
+      </Head>
+
+
 </template>
 
 <script setup lang="ts">

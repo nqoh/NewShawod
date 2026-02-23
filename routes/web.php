@@ -16,11 +16,11 @@ use App\Models\Rate;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Hash;
+use Inertia\Inertia;
 
 Route::inertia('login','auth/Login')->name('login');
 
-Route::domain('portal.shawod.co.za')->group(function(){
+Route::domain('portal.shawod.com')->group(function(){
 
     Route::middleware('guest')->group(function(){
     Route::inertia('/','auth/Login')->name('login');
@@ -84,7 +84,7 @@ Route::domain('portal.shawod.co.za')->group(function(){
 });
 
 
-Route::domain('shawod.co.za')->group(function(){
+Route::domain('shawod.com')->group(function(){
 Route::middleware('guest')->group(function(){
     Route::inertia('/','Welcome')->name('home');
     Route::inertia('/website','Websites')->name('websites');
@@ -112,3 +112,7 @@ Route::middleware('guest')->group(function(){
 });
 });
 
+
+route::fallback(function(){
+   return Inertia('404');
+});

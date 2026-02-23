@@ -60,6 +60,20 @@
 
 <submitOrder />
 <WhatsApp />
+
+
+      <Head>
+        
+        <meta name="title" content="Configure website">
+
+        <meta name="keywords" content="Durban website design, website packages, africa website, ghana website, web development, south africa web company, domain, hosting, gauteng, mpumalanga, cape town">
+       
+         <title>Configure website | </title>
+
+      </Head>
+
+
+
 </template>
 
 <script setup lang="ts">
