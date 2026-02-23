@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('user_id')->constrained('users')->cascadeOnDelete();
             $table->integer('paid_percentage')->default(0);
+            $table->string('now_due');
             $table->decimal('price',8,2);
             $table->timestamps();
         });

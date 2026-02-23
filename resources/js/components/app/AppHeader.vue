@@ -12,12 +12,12 @@
           </div>
             <div class="collapse navbar-collapse">
                <ul class="nav navbar-nav navbar-right">
-                   <li><Link :href="route('home')"      class="bttn bttn-2">Home</Link></li>
-                   <li><Link :href="route('websites')"  class="bttn bttn-2">Websites</Link></li>
-                   <li><Link :href="route('packages')"  class="bttn bttn-2">Packages</Link></li>
-                   <li><Link :href="route('portfolio')" class="bttn bttn-2">Portfolio</Link></li>
-                   <li><Link :href="route('aboutus')"   class="bttn bttn-2">About us</Link></li>
-                   <li class="dropdown"><a href="#">Services <i class="fa fa-angle-down"></i></a>
+                   <li><Link :href="route('home')"      class="bttn bttn-2" :class="$page.component == 'Welcome' ? 'active' : ''">Home</Link></li>
+                   <li><Link :href="route('websites')"  class="bttn bttn-2" :class="$page.component == 'Websites' ? 'active' : $page.component == 'GetWebsite' ? 'active' : ''">Websites</Link></li>
+                   <li><Link :href="route('packages')"  class="bttn bttn-2" :class="$page.component == 'Packages' ? 'active' : $page.component == 'GetPackage' ? 'active' : ''">Packages</Link></li>
+                   <li><Link :href="route('portfolio')" class="bttn bttn-2" :class="$page.component == 'Portfolio' ? 'active' : ''">Portfolio</Link></li>
+                   <li><Link :href="route('aboutus')"   class="bttn bttn-2" :class="$page.component == 'Aboutus' ? 'active' : ''">About us</Link></li>
+                   <li class="dropdown"><a href="#" :class="$page.component == 'Seo' ? 'active' : $page.component == 'Hosting' ? 'active' : $page.component == 'Domain' ? 'active' : '' ">Services <i class="fa fa-angle-down"></i></a>
                    <ul role="menu" class="sub-menu">
                      <li><Link :href="route('seo')">S.E.O</Link></li>
                       <li><Link :href="route('hosting')">Hosting</Link></li>
@@ -39,5 +39,11 @@ import toogleHeaderIcon from './Icons/toogleHeaderIcon.vue';
 </script>
 
 <style scoped>
+
+.active{
+   color:#33ccff !important;
+   transition: width 350ms ease-in-out;
+   letter-spacing: 4px;
+}
 
 </style>

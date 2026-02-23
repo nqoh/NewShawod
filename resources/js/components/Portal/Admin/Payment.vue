@@ -12,6 +12,7 @@
             <tr>
              <th>Paid Percentage</th>
              <th>Total Price</th>
+             <th>Now Due</th>
              <th>Last Payment</th>
             </tr>
          </thead>
@@ -20,6 +21,14 @@
         <tr>
          <td>{{ payment.data.paid_percentage}}</td>
          <td>R {{ payment.data.price }}</td>
+         <td> 
+          <select v-model="paymentStatus">
+           <option value="deposit">Deposite</option>
+           <option value="final">Final</option>
+           <option value="none">None</option>
+          </select>
+           <button class="btn btn-primary" @click="router.post(route('updatePaymentStatus'),{id:payment.data.user_id,status:paymentStatus})" >Update</button>
+        </td>
          <td>{{ payment.data.updated_at }}</td>
         </tr>
 
@@ -40,7 +49,11 @@
 </template>
 
 <script setup lang="ts">
-   defineProps(['payment'])
+   const props = defineProps(['payment'])
+   import { ref } from 'vue';
+   import { router } from '@inertiajs/vue3';
+import { route } from 'ziggy-js';
+   const paymentStatus = ref(props.payment.data.now_due);
 </script>
 
 <style scoped>

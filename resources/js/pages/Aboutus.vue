@@ -8,7 +8,7 @@
         </span>
        </h1>
          <template #image>
-            <img src="assets/images/aboutus/5.png"   class="button margin-bottom" alt="">
+            <img src="/assets/images/aboutus/5.png"   class="button margin-bottom" alt="">
          </template>
          <template  #body>
             <h1 class="margin-bottom">Shawod (pty) ltd</h1>

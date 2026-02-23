@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Mail\DepositMail;
 use App\Mail\finalPaymentMail;
 use App\Models\Notification;
+use App\Models\Payment;
 use App\Models\User;
 use Illuminate\Support\Facades\Mail;
 
@@ -54,8 +55,12 @@ class PaymentController extends Controller
            Mail::to($user->email)->queue(new finalPaymentMail($user->name,$user->project->reference,$user->project->package, $user->payment->price * 0.5, $user->payment->price));
            return redirect()->back();
         
-       }else{
-        
        }
+    }
+
+    public function updateStatus(Request $request)
+    {
+        Payment::where('user_id', $request->id)->update(['now_due'=> $request->status]);
+        return back();
     }
 }

@@ -1,13 +1,13 @@
 <template>
-    <div style="	background: var(--grey); ">
+    <div style="	background: var(--grey);  min-width: 137rem; overflow: scroll;">
       <Sidbar :selectedComponent="selectedComponent"  v-model="selectedComponent" :notifications="notifications" />
-      <section id="content" style="	background: var(--grey); min-height: 60rem;"  >
+      <section id="content" style="	background: var(--grey); min-height: 60rem; "  >
 
           <Navbar />
       
           <KeepAlive >
             <component :is="selectedComponent" v-model="selectedComponent" 
-            :rateUs="rateUs" :progress="progress" :notifications="notifications" :project="project"  />
+            :rateUs="rateUs" :progress="progress" :notifications="notifications" :project="project" :payment="payment"  />
          </KeepAlive>
 
       </section>
@@ -22,7 +22,7 @@
   import Dashboard from '@/components/Portal/Client/Dashboard.vue';
   import { ClientDashboard } from '@/composables/ClientDashboard'
   import { onMounted , shallowRef } from 'vue';
-  defineProps(['rateUs','progress','notifications','project'])
+  defineProps(['rateUs','progress','notifications','project','payment'])
   defineOptions({ layout : ''})
 
   onMounted(()=> ClientDashboard());

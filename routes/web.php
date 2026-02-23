@@ -17,12 +17,9 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Number;
 
 Route::inertia('login','auth/Login')->name('login');
-Route::get('/test', function(){
-  return Contact::get();
-});
+
 Route::domain('portal.shawod.co.za')->group(function(){
 
     Route::middleware('guest')->group(function(){
@@ -42,6 +39,7 @@ Route::domain('portal.shawod.co.za')->group(function(){
             'rateUs' => $user->rateus->status,
             'progress'=> $user->project->progress,
             'project' => $user->project,
+            'payment' => new PaymentResource($user->payment),
             'notifications' => NotificationsResource::collection($user->notifications()->latest('id')->get())
             ]
         );
@@ -80,6 +78,7 @@ Route::domain('portal.shawod.co.za')->group(function(){
        Route::post('/notification', [NotificationController::class, 'store'])->name('StoreNotification');
        Route::post('/PaymentAlert', [PaymentController::class, 'SendPaymentAlert'])->name('PaymentAlert');
        Route::post('/DeleteEmail',  [ContactusController::class, 'delete'])->name('DeleteEmail');
+       Route::post('/updatePaymentStatus', [PaymentController::class, 'updateStatus'])->name('updatePaymentStatus');
     });
 
 });

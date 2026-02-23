@@ -1,8 +1,7 @@
 <template>
-  <div >
+  <div>
    <main >
-
-	   <div class="col-lg-3 col-sm-6 mb-4 mb-lg-0" >
+	   <div class="col-lg-3 col-sm-6 mb-4 mb-lg-0" style="width: 30rem;" >
         <div class="card shadow text-center">
           <div class="position-relative rounded-top progress-wrapper" data-color="#fdb157" style="background-color: rgb(142, 253, 159); ">
             <div class="wave" :data-progress="props.progress+'%'" :style="{bottom:props.progress+'%'}"></div>
@@ -15,13 +14,13 @@
 
      <div style="float: left; margin-left:  5%; width: 300px; margin-top: -30px;" >
         <h1 align="center"><u>Retainer</u></h1>
-        <p>To secure your place and start developing your website we need 50% upfornt deposit</p>
+        <p v-if="payment.data.now_due == 'deposit'">To secure your place and start developing your website we need 50% upfornt deposit</p>
         <!-- <p>To continue with your webiste development you need to pay 25% second schedule </p> -->
-        <!-- <p>To continue with your webiste development you need to pay 50% final for launch. </p> -->
-        <!-- <p>You don't have any Outstanding Payments for now </p> -->
+         <p v-if="payment.data.now_due == 'final'">To continue with your webiste development you need to pay 50% final for launch. </p>
+         <p v-if="payment.data.now_due == 'none'">You don't have any Outstanding Payments for now </p> 
        <br>
         <div class='col-md-offset-0' style="margin-left:  0%;">
-        <button class='btn-lg btn-primary' @click="$emit('update:modelValue', Payment)">Pay Now</button>
+         <button class='btn-lg btn-primary' :style="{ display: payment.data.now_due }" @click="$emit('update:modelValue', Payment)">Pay Now</button>
         </div>
       </div> 
     
@@ -74,7 +73,7 @@
   import { useForm , usePage} from '@inertiajs/vue3';
   import { route } from 'ziggy-js';
 
-  const props = defineProps(['rateUs','progress'])
+  const props = defineProps(['rateUs','progress','payment'])
   const form = useForm({rateUs : parseInt(props.rateUs)})
   const page  = usePage();
 

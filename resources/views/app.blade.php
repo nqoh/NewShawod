@@ -93,8 +93,6 @@
   </body>
 </html>
 
-
-
 <script type="text/javascript" src="{{ asset('assets/js/contactus.js') }}"></script>
 <script type="text/javascript" src="{{ asset('assets/js/jquery.js') }}"></script>
 <script type="text/javascript" src="{{ asset('assets/js/1script.js') }}"></script>
@@ -118,8 +116,6 @@
 
 <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js" />
 <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js" />
-
-</body>
 
 <script>
     $(function() {
