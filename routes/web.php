@@ -16,7 +16,7 @@ use App\Models\Rate;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Inertia\Inertia;
+
 
 Route::inertia('login','auth/Login')->name('login');
 
@@ -78,9 +78,10 @@ Route::domain('portal.shawod.com')->group(function(){
        Route::post('/notification', [NotificationController::class, 'store'])->name('StoreNotification');
        Route::post('/PaymentAlert', [PaymentController::class, 'SendPaymentAlert'])->name('PaymentAlert');
        Route::post('/DeleteEmail',  [ContactusController::class, 'delete'])->name('DeleteEmail');
-       Route::post('/updatePaymentStatus', [PaymentController::class, 'updateStatus'])->name('updatePaymentStatus');
+       Route::post('/updateCurrentPaymentStatus', [PaymentController::class, 'updateStatus'])->name('updateCurrentPaymentStatus');
+       Route::post('/updatePaidPaymentStatus', [PaymentController::class, 'updatePaidStatus'])->name('updatePaidPaymentStatus');
     });
-
+    
 });
 
 

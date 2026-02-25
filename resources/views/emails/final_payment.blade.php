@@ -84,7 +84,7 @@
                     <div style="margin-left: 5%;">
                      <h2 ><u>Capitec Bank</u> <img src="{{ $message->embed(public_path('assets/images/capitec.png')) }}" width="35" /></h2>
                      <p><b>Name : </b> NB NGOBESE</p> 
-                     <p><b>Account Number : </b> 14 83 62790</p> 
+                     <p><b>Account Number : </b> 1483627940</p> 
                      <p><b>Refrence : </b>  {{ $reference }} </p> 
                      <hr>
                      <h2 ><u>Standard Bank</u> <img src="{{ $message->embed(public_path('assets/images/standardB.jpeg')) }}" width="25" /></h2>
@@ -99,7 +99,10 @@
                 </div>
                   
                 <table width="100%" cellpadding="0" cellspacing="0">
-                <h3>Thank you</h3>
+                    <h3 style="margin-bottom:5px">Thank you</h3>
+                    <small>Shawod Team</small><br>
+                    <small>support@shawod.com</small>
+
                 <p> **Do not reply to this automated email</p>
             </td>
         </tr>

@@ -89,7 +89,9 @@
                         If there is anything more we can do to help, please don't hesitate to email us
                    </p>
 
-                <h3>Thank you</h3>
+                   <h3 style="margin-bottom:5px">Thank you!</h3>
+                   <small>Shawod Team</small><br>
+                   <small>info@shawod.com</small>
                 <p> **Do not reply to this automated email</p>
             </td>
         </tr>

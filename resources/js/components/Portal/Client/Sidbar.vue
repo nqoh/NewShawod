@@ -1,10 +1,9 @@
 <template>
     <div>
         <section id="sidebar">
-		<a href="#" class="brand">
-
+		<Link href="/" class="brand">
             <img src="/assets/images/logo.png"  style="margin-left: 30%;margin-top: 15%;"/>
-		</a>
+		</Link>
 		<ul class="side-menu top">
 			<li class="active">
 				<a href="#" @click="$emit('update:modelValue',Dashboard)">

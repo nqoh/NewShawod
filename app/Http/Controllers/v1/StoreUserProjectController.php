@@ -17,7 +17,7 @@ class StoreUserProjectController extends Controller
 {
     public function store(StoreUserProjectRequest $request)
     {
-        
+    
         try{
             
             DB::beginTransaction();
@@ -25,8 +25,8 @@ class StoreUserProjectController extends Controller
 
             $user = User::create([
                  'role_id' => 1,  
-                 'name' => $request->name,
-                 'surname' => $request->surname,
+                 'name' => ucfirst($request->name),
+                 'surname' => ucfirst($request->surname),
                  'phone' => $request->phone,
                  'email' => $request->email,
             ]);

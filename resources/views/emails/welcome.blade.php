@@ -101,7 +101,10 @@
                     <a href="https://portal.shawod.com" class="button" style="color:#fffff">Login</a>
                  </div>
 
-                <h3>Thank you</h3>
+                 <h3 style="margin-bottom:5px">Thank you</h3>
+                 <small>Nqobile Ngobese</small><br>
+                 <small>nqobile@shawod.com</small><br>
+                 <small>Web Developer</small>
                 <p> **Do not reply to this automated email</p>
             </td>
         </tr>

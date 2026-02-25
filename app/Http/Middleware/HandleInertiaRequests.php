@@ -52,6 +52,8 @@ class HandleInertiaRequests extends Middleware
             'resetPassword' => session('resetPassword'),
             'ProgressUpdate' => session('ProgressUpdate'),
             'welcome' => session('welcome'),
+            'now_due' => session('now_due'),
+            'paid' => session('paid'),
             'contactuUs' => session('contactuUs'),
             'StoreNotification' => session('StoreNotification'),
             'LoginError' => session('LoginError'),

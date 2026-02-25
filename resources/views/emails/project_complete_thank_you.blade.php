@@ -62,8 +62,8 @@
     </td>
         </tr>
             <td class="content">
-                <p>Hi <b>Nqobile</b>,</p>
-                <p>Now that your website is officially live, I wanted to take a moment to <b>Thank you</b>
+                <p>Hi <b>{{ ucfirst($name) }}</b>,</p>
+                <p>Now your website is officially live, I wanted to take a moment to <b>Thank you</b>
                     for the opportunity to work together. it`s been a pleasure collaborating with you to 
                     bring this vision to life.
                   </p> 
@@ -73,13 +73,16 @@
                     I`d love to work with you again on future projects.
                   </p>
     
-                <h3>Thank you again! </h3>
+                <h3 style="margin-bottom:5px">Thank you again! </h3>
+                <small>Nqobile Ngobese</small><br>
+                <small>nqobile@shawod.com</small><br>
+                <small>Web Developer</small>
                 <p> <small><b>**Do not reply to this automated email<b><small></p>
             </td>
       
         <tr>
             <td class="footer">
-                {{-- <p>Questions? Contact our support team at support@shawod.com </p>
+                 <p>Questions? Contact our support team at support@shawod.com </p>
                 <a href='https://shawod.com' target="_blank">www.shawod.com</a>
                 <p>
                     <a href="https://www.facebook.com/shawodza">
@@ -92,7 +95,7 @@
                     </a>
 
                     <img src="{{  $message->embed(public_path('assets/thumbnails/logoSb.png')) }}" style="float: right; margin-top: -50px" />
-                </p> --}}
+                </p> 
             
             </td>
         </tr>

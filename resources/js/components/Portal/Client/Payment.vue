@@ -9,21 +9,18 @@
           <thead>
             <tr>
              <th>Package</th>
-             <th>Paid </th>
-             <th>Total Price</th>
+             <th>Paid</th>
              <th>Now Due</th>
-           
+             <th>Total Price</th>
             </tr>
          </thead>
        <tbody>
-      
         <tr>
          <td><b>{{project.package}}</b></td>
-         <td><b>{{payment.data.paid_percentage}}%</b></td>
-         <td><b>R {{ payment.data.price }}</b></td>
+         <td><b>R {{payment.data.paid}}</b></td>
          <td><b>{{ payment.data.now_due == 'deposit' ? '50% Deposit' : payment.data.now_due == 'final' ? '50% Final' : 'none' }}</b></td>
+         <td><b>R {{ payment.data.price }}</b></td>
         </tr>
-
        </tbody>
        </table>
        </div>
@@ -41,7 +38,7 @@
            <div style="margin-left: 5%;">
             <h2 ><u>Capitec Bank</u> <img src="assets/images/capitec.png" width="35" /></h2>
             <p><b>Name : </b> NB NGOBESE</p> 
-            <p><b>Account Number : </b> 14 83 62790</p> 
+            <p><b>Account Number : </b> 1483627940</p> 
             <p><b>Refrence: </b> {{ props.project.reference }}</p> 
             <hr>
             <h2 ><u>Standard Bank</u> <img src="assets/images/standardB.jpeg" width="25" /></h2>

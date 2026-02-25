@@ -41,9 +41,9 @@
                             <p>Please visit again soon your project is under construction.<br>Duration <strong>1 - 4</strong> <strong>weeks</strong></p>
                         </div>
 
-                        <div class="mbr-section-btn"><a class="btn btn-lg btn-primary-outline btn-primary" href="#top">
+                        <!-- <div class="mbr-section-btn"><a class="btn btn-lg btn-primary-outline btn-primary" href="#top">
                             Nqobile
-                        </a></div>
+                        </a></div> -->
 
                     </div>
 

@@ -10,16 +10,23 @@
         <table>
           <thead>
             <tr>
-             <th>Paid Percentage</th>
+             <th>Paid</th>
              <th>Total Price</th>
              <th>Now Due</th>
              <th>Last Payment</th>
             </tr>
          </thead>
        <tbody>
-      
+  
         <tr>
-         <td>{{ payment.data.paid_percentage}}</td>
+         <td>{{ payment.data.paid}}
+          <select v-model="PaidPaymentStatus">
+           <option :value="(parseInt(payment.data.price) * 0.5).toFixed(2)  ">Deposite</option>
+           <option :value="parseInt(payment.data.price).toFixed(2)">Final</option>
+           <option value="0.00">none</option>
+          </select>
+           <button class="btn btn-primary" @click="router.post(route('updatePaidPaymentStatus'),{id:payment.data.user_id,status:PaidPaymentStatus})" >Update</button>
+         </td>
          <td>R {{ payment.data.price }}</td>
          <td> 
           <select v-model="paymentStatus">
@@ -27,7 +34,7 @@
            <option value="final">Final</option>
            <option value="none">None</option>
           </select>
-           <button class="btn btn-primary" @click="router.post(route('updatePaymentStatus'),{id:payment.data.user_id,status:paymentStatus})" >Update</button>
+           <button class="btn btn-primary" @click="router.post(route('updateCurrentPaymentStatus'),{id:payment.data.user_id,status:paymentStatus})" >Update</button>
         </td>
          <td>{{ payment.data.updated_at }}</td>
         </tr>
@@ -40,6 +47,8 @@
       </div>
   
   </section>
+  <h2 v-if="$page.props.paid" align="center" style="color: #33ccff;">{{ $page.props.paid }}</h2>  
+  <h2 v-if="$page.props.now_due" align="center" style="color: #33ccff;">{{ $page.props.now_due }}</h2>
        </div>
 
        <div style="margin: 0px auto;"  align="center">
@@ -52,8 +61,9 @@
    const props = defineProps(['payment'])
    import { ref } from 'vue';
    import { router } from '@inertiajs/vue3';
-import { route } from 'ziggy-js';
+   import { route } from 'ziggy-js';
    const paymentStatus = ref(props.payment.data.now_due);
+   const PaidPaymentStatus = ref(props.payment.data.paid)
 </script>
 
 <style scoped>

@@ -16,7 +16,7 @@ class PaymentResource extends JsonResource
     {
         return [
             'user_id' => $this->user_id,
-            'paid_percentage' => $this->paid_percentage,
+            'paid' => $this->paid,
             'now_due' => $this->now_due,
             'price' => $this->price,
             'updated_at' => date_format($this->updated_at, 'd/m/y')

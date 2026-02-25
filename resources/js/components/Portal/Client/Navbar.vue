@@ -3,32 +3,31 @@
         <nav>
     <i class='bx bx-menu bx-sm' ></i>
  
-
-    <form action="#" >
-      <a href="#" class="brand">
+    <form >
+      <span class="brand">
 			<span class="text">CLIENT PORTAL</span>
-		</a>
+      </span>
     </form>
    
-  
     <!-- Notification Bell -->
-    <a href="#" class="notification" id="notificationIcon">
+    <span class="notification" id="notificationIcon">
         <i class='bx bxs-bell bx-tada-hover' ></i>
         <!-- <span class="num">8</span> -->
-        <span class="text">{{ $page.props.auth.user.name }}  {{ $page.props.auth.user.surname }}</span>
-    </a>
+        <span class="text"><b>{{ $page.props.auth.user.name }}  {{ $page.props.auth.user.surname }}</b></span>
+    </span>
   
-
     <!-- Profile Menu -->
-     <a href="#" class="profile" id="profileIcon">
+     <span class="profile" id="profileIcon">
         <img src="assets/thumbnails/favw.png" alt="Profile">
-    </a>
+     </span>
    
 </nav>
     </div>
 </template>
 
 <script setup lang="ts">
+import { Link } from '@inertiajs/vue3';
+
 
 </script>
 

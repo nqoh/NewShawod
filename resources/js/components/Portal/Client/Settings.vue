@@ -22,7 +22,7 @@
          <p @click="isCancellationForm =  true" align="center" class="p">Fill out this cancel services form</p>
       </div>
 
-      <div align="center">
+      <div align="center" style="margin-top: 26%;">
         <img src="assets/thumbnails/why us blue.png"   />
       </div>
 

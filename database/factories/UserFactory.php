@@ -28,7 +28,7 @@ class UserFactory extends Factory
             'name' => 'Nqobile',
             'surname' =>  'Ngobese',
             'phone' => '063 014 2446',
-            'email' => 'nqobile@shawod.co.za',
+            'email' => 'nqobile@shawod.com',
             'password' => static::$password ??= Hash::make('3244Shawod'),
             'remember_token' => Str::random(10),
         ];

@@ -14,8 +14,8 @@ return new class extends Migration
         Schema::create('payments', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->constrained('users')->cascadeOnDelete();
-            $table->integer('paid_percentage')->default(0);
-            $table->string('now_due');
+            $table->decimal('paid',8,2)->default(0.00);
+            $table->string('now_due')->default('none');
             $table->decimal('price',8,2);
             $table->timestamps();
         });

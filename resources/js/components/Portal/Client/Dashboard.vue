@@ -14,10 +14,10 @@
 
      <div style="float: left; margin-left:  5%; width: 300px; margin-top: -30px;" >
         <h1 align="center"><u>Retainer</u></h1>
-        <p v-if="payment.data.now_due == 'deposit'">To secure your place and start developing your website we need 50% upfornt deposit</p>
+        <p v-if="payment.data.now_due == 'deposit'" align="center">To secure your place and start developing your website we need 50% upfornt deposit</p>
         <!-- <p>To continue with your webiste development you need to pay 25% second schedule </p> -->
-         <p v-if="payment.data.now_due == 'final'">To continue with your webiste development you need to pay 50% final for launch. </p>
-         <p v-if="payment.data.now_due == 'none'">You don't have any Outstanding Payments for now </p> 
+         <p v-if="payment.data.now_due == 'final'" align="center">To continue with your webiste development you need to pay 50% final for launch. </p>
+         <p v-if="payment.data.now_due == 'none'" align="center">You don't have any Outstanding Payments</p> 
        <br>
         <div class='col-md-offset-0' style="margin-left:  0%;">
          <button class='btn-lg btn-primary' :style="{ display: payment.data.now_due }" @click="$emit('update:modelValue', Payment)">Pay Now</button>
