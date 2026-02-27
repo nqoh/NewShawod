@@ -1,7 +1,7 @@
 <template>
 <BreaCrumb title="Packages" description="Choose your package." />
 
-<div class="container">
+<div class="container" style="width: 100%;">
   
   <Title>
     <h1> Let's develop your <span class="typewrite" style="color:rgb(51,204,255)" data-period="100000" data-type='[ "Stunning", "Premium" ]' ></span> Website.</h1>
@@ -9,7 +9,10 @@
    
   <packages />
 
-   <Packagesdescription />
+  <div class="container">
+    <Packagesdescription />
+  </div>
+  
 
 <div class="container">
   <div class="row">

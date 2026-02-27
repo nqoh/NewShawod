@@ -1,7 +1,7 @@
 <template>
 <BreaCrumb title="Websites" description="Select a website." />
 
-<div class="container">
+<div class="container" style="width: 100%;">
 
   <Title>
     <h1> We are ready to create your <span class="typewrite" style="color:rgb(51,204,255)" data-period="100000" data-type='[ "Awesome website.", "Online Brand Ambassador." ]'></span></h1>
@@ -12,7 +12,9 @@
 
     <Pacages />
 
-    <Description />
+    <div class="container">
+       <Description />
+    </div>
 
 <div class="container">
   <div class="row">
@@ -26,7 +28,7 @@
 
  <OurDeal title="View our portfolio" description="See the work we've done &amp; mockups." />
 
- <BigLeague />
+     <BigLeague style="width: 100%;"/>
 
   </div>
  </section>
