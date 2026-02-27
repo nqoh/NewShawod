@@ -7,8 +7,8 @@
                 <div class="col-sm-12">
                     <div class="clients text-left wow fadeInUp" data-wow-duration="500ms" data-wow-delay="300ms">
                           <h4 class="title"> All references in this Terms and Conditions of use Policy to "we," "us," or "our" Shall refer to Shawod (pty) ltd and its subsidiaries,
-     The term "site" or "website" refers to Shawod.co.za,<br>
-          The term "service"  refers to the services and/or products provided by Shawod.co.za, The term "content" refers to information provided on the Site in any form.
+     The term "site" or "website" refers to shawod.com,<br>
+          The term "service"  refers to the services and/or products provided by shawod.com, The term "content" refers to information provided on the Site in any form.
       <br>All references in this Terms and Conditions of use Policy to "user," "you," or "your" shall refer to the users of Shawod and portals.</h4>
                         <br>
                         <h2>Introduction</h2>
@@ -110,7 +110,7 @@
                         <h2>Entire agreement</h2>
                         <p>These terms and conditions , together with privacy policy and disclaimer, constitute the entire agreement between you and Shawod in relation to your use of this website, and supersede all previous agreements in respect of your use of this website.</p>
                         <br>
-                        <h2>You can contact Shawod by email to <a href="mailto:Info@shawod.co.za">Info@shawod.co.za</a></h2>
+                        <h2>You can contact Shawod by email to <a href="mailto:Info@shawod.com">Info@shawod.com</a></h2>
                         
                     </div>
                 </div>

@@ -10,7 +10,7 @@
         <p>
          Shawod Domain Name Search tool can instantly find the domain name that you've been looking
          or, simple domain set up - no technical skills needed. forward your enquiries to 
-         info@shawod.co.za
+         info@shawod.com
         </p>
     </template>
   </Title>

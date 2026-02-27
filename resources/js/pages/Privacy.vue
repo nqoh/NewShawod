@@ -49,7 +49,7 @@
     Shawod is not responsible for the privacy policies or practices of any third party.</p>
                         <h2>Contact Shawod</h2>
                         <p>If you have any questions about this privacy policy or Shawod's treatment of your personal information, please write:
-        by email to <a href="mailto:info@shawod.co.za">info@shawod.co.za</a></p>
+        by email to <a href="mailto:info@shawod.com">info@shawod.com</a></p>
                     </div>
                 </div>
             </div>

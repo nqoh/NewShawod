@@ -10,7 +10,7 @@
        <a href="https://twitter.com/ShawodWeb" target="_blank">
        <img src="assets/images/home/profile2.png" alt="Twitter"></a>
       </div>
-      <h3><a href="https://portal.shawod.co.za">Clients Portal</a></h3>
+      <h3><a href="https://portal.shawod.com">Clients Portal</a></h3>
     </div>
  </div>
 </template>

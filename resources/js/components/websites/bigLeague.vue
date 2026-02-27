@@ -6,7 +6,7 @@
      <div class="col-sm-12">
        <div class="clients text-center wow fadeInUp" data-wow-duration="500ms" data-wow-delay="300ms">
        <h1> Join the Big League </h1>
-        <p>Animations are standard on these premium websites, our website (<a href="index.php">www.shawod.co.za</a>) is a demonstration.</p>
+        <p>Animations are standard on these premium websites, our website (<Link :href="route('home')">www.shawod.com</Link>) is a demonstration.</p>
       </div>
     </div>
    </div>
@@ -80,6 +80,7 @@
 <script setup lang="ts">
 import IconWeave from '@/components/app/Icons/IconWeave.vue';
 import { useSetStorage } from '@/composables/useStorage';
+import { route } from 'ziggy-js';
 const { getwebsite } = useSetStorage();
 
 </script>

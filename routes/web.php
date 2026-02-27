@@ -85,8 +85,7 @@ Route::domain('portal.shawod.com')->group(function(){
 });
 
 
-Route::domain('shawod.com')->group(function(){
-Route::middleware('guest')->group(function(){
+Route::domain('shawod.com')->middleware('guest')->group(function(){
     Route::inertia('/','Welcome')->name('home');
     Route::inertia('/website','Websites')->name('websites');
     Route::inertia('/packages','Packages')->name('packages');
@@ -110,7 +109,6 @@ Route::middleware('guest')->group(function(){
     Route::inertia('/faq','Faqs')->name('faq');
     Route::inertia('/privacy','Privacy')->name('privacy'); 
     Route::inertia('/terms','Terms')->name('terms');
-});
 });
 
 

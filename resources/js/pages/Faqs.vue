@@ -24,7 +24,7 @@ Also refer to <Link :href="route('howitworks')"> how it works </Link> for more c
     <input class="ac-input" id="ac-2" name="accordion-1" type="checkbox" checked/>
     <label class="ac-label" for="ac-2">What is a domain name?<i></i></label>
     <div class="article ac-content">
-      <p>A domain name is the actual name of a website (e.g. www.shawod.co.za), and every single website has a domain name. To obtain one, you need to purchase it through a domain registrar. Domains can cost anywhere from a few dollars a year to hundreds of thousands of dollars a year, based on the contract and popularity of the domain. Every domain name is actually pointing to an IP (Internet Protocol) address, which is a series of numbers. Because most people can’t remember 10 digits in perfect order, domain names serve as easily-remembered alias for visitors, if you need one please include it on your Cart.</p>
+      <p>A domain name is the actual name of a website (e.g. www.shawod.com), and every single website has a domain name. To obtain one, you need to purchase it through a domain registrar. Domains can cost anywhere from a few dollars a year to hundreds of thousands of dollars a year, based on the contract and popularity of the domain. Every domain name is actually pointing to an IP (Internet Protocol) address, which is a series of numbers. Because most people can’t remember 10 digits in perfect order, domain names serve as easily-remembered alias for visitors, if you need one please include it on your Cart.</p>
     </div>
   </div>
   <!-- accordion item 2 -- end -->
@@ -108,7 +108,7 @@ Also refer to <Link :href="route('howitworks')"> how it works </Link> for more c
     <input class="ac-input" id="ac-10" name="accordion-1" type="checkbox" />
     <label class="ac-label" for="ac-10">Can I edit the Content on my website after you done?<i></i></label>
     <div class="article ac-content">
-      <p>Yes, you sure can. When selecting features for your website make sure you select Content Management System (CMS), such platform removes the need for businesses to constantly contact web developers when changes are required. This means no additional web development charges as well as no waiting times for changes to be implemented. Changes to the website can be completed instantly and easily by internal staff when required let us know on our <a href="https://portal.shawod.co.za" target="_blank"> Client Portal </a>.</p>
+      <p>Yes, you sure can. When selecting features for your website make sure you select Content Management System (CMS), such platform removes the need for businesses to constantly contact web developers when changes are required. This means no additional web development charges as well as no waiting times for changes to be implemented. Changes to the website can be completed instantly and easily by internal staff when required let us know on our <a href="https://portal.shawod.com" target="_blank"> Client Portal </a>.</p>
       
     </div>
   </div>
@@ -200,7 +200,7 @@ Also refer to <Link :href="route('howitworks')"> how it works </Link> for more c
                 <div class="col-sm-12">
                     <div class="clients text-center wow fadeInUp" data-wow-duration="500ms" data-wow-delay="300ms">
                          <br>
-                        <p>For queries you can email <a href="mailto:info@shawod.co.za">info@shawod.co.za</a></p>
+                        <p>For queries you can email <a href="mailto:info@shawod.com">info@shawod.com</a></p>
 
                     </div>
                 </div>

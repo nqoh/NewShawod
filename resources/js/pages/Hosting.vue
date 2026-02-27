@@ -10,7 +10,7 @@
         Shawod is also a web hosting service provider, we provide the technologies and 
         services needed for a website or application to be viewed on the internet.
         Websites are hosted on special computers called servers. forward your queries to 
-        <a href="mailto:info@shawod.co.za">info@shawod.co.za</a>
+        <a href="mailto:info@shawod.com">info@shawod.com</a>
       </p>
     </template>
    </Title>
